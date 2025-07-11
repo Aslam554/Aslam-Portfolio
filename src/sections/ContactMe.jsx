@@ -1,10 +1,23 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Social from "../components/Social";
+import { motion } from 'framer-motion';
+import { FaPaperPlane } from 'react-icons/fa';
 
 export default function ContactMe() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
   const [errors, setErrors] = useState({});
+  const [textGradient, setTextGradient] = useState('text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500');
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme') || 'cyan-teal';
+    const gradients = {
+      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500',
+      'blue-purple': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500',
+      'red-orange': 'text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500',
+    };
+    setTextGradient(gradients[theme] || gradients['cyan-teal']);
+  }, []);
 
   const validateForm = () => {
     const errors = {};
@@ -49,88 +62,100 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="pt-24 px-4 md:px-16 pb-16 bg-black text-white">
-      <p className="raleway-bold text-4xl">Contact Me</p>
-      <div className="w-full h-1 rounded-sm bg-white my-6 mb-8"></div>
+    <section className="py-16 px-4 md:px-16 max-w-7xl mx-auto" id="contact">
+      <div className="text-center mb-12">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className={`text-4xl md:text-5xl font-bold mb-4 ${textGradient}`}
+        >
+          Contact Me
+        </motion.h2>
+        <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+          Want to get in touch? Fill the form or message me directly.
+        </p>
+      </div>
 
-      <div className="relative md:flex md:gap-10 items-start">
-        {/* Background vertical divider */}
-        <div className="hidden md:block absolute left-1/2 top-0 h-full w-[2px] bg-white/20 -translate-x-1/2"></div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div className="bg-gray-900/80 p-6 rounded-xl backdrop-blur-md border border-gray-800">
+          <h3 className={`text-xl font-bold mb-6 ${textGradient}`}>Send a Message</h3>
 
-        {/* Form Section */}
-        <div className="md:w-1/2 z-10">
-          <p className="work-sans-regular text-lg">
-            If you want to know more about me or my work, or if you would just like to say hello, send me a message. I&apos;d love to hear from you.
-          </p>
-
-          <form onSubmit={handleSubmit} className="mt-10 work-sans-regular pr-4 md:pr-10">
-            <label className="text-lg">Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="w-full my-3 px-4 py-2 bg-white text-black placeholder-gray-500"
-              placeholder="Your name"
-            />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-
-            <label className="text-lg">Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full my-3 px-4 py-2 bg-white text-black placeholder-gray-500"
-              placeholder="Your email address"
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-
-            <label className="text-lg">Message:</label>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              className="w-full my-3 px-4 py-2 bg-white text-black placeholder-gray-500"
-              placeholder="Your message"
-              rows={5}
-            />
-            {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-
-            <div className="flex flex-col md:flex-row justify-between">
-              <a
-                href="mailto:begaslam405@gmail.com"
-                target="_blank"
-                className="underline hover:text-gray-300 mb-4 md:mb-0"
-              >
-                Send me email directly
-              </a>
-              <button type="submit" className="w-[60%] px-4 py-3 mt-4 bg-[#00b09b] text-white  hover:bg-pink-600 transition duration-300">
-                Submit
-              </button>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="text-gray-300 text-sm">Name</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Your name"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-teal-500"
+              />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
-            {formStatus && <p className="mt-4 text-green-500">{formStatus}</p>}
+
+            <div>
+              <label className="text-gray-300 text-sm">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder="Your email"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-teal-500"
+              />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            </div>
+
+            <div>
+              <label className="text-gray-300 text-sm">Message</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="Your message"
+                rows={5}
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-teal-500"
+              ></textarea>
+              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              type="submit"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              <FaPaperPlane /> Submit
+            </motion.button>
+            {formStatus && <p className="text-sm text-green-400 mt-2">{formStatus}</p>}
           </form>
         </div>
 
-        {/* Contact Info Section */}
-        <div className="md:w-1/2 text-left md:text-right mt-16 md:mt-0 z-10">
-          <div className="text-xl mb-4 work-sans-regular">Email:</div>
-          <div className="text-3xl suse-title">begaslam405@gmail.com</div>
+        <div className="text-left md:text-right">
+          <div className="mb-6">
+            <h4 className={`text-lg font-semibold ${textGradient}`}>Email</h4>
+            <p className="text-white text-xl mt-1">begaslam405@gmail.com</p>
+          </div>
 
-          <div className="text-xl mb-4 mt-16 work-sans-regular">Location:</div>
-          <div className="text-3xl suse-title">Ghazipur, Uttar Pradesh</div>
+          <div className="mb-6">
+            <h4 className={`text-lg font-semibold ${textGradient}`}>Location</h4>
+            <p className="text-white text-xl mt-1">Ghazipur, Uttar Pradesh</p>
+          </div>
 
-          <div className="text-xl mb-4 mt-16 work-sans-regular">Social:</div>
-          <div className="flex justify-start md:justify-end">
-            <Social />
+          <div className="mb-6">
+            <h4 className={`text-lg font-semibold ${textGradient}`}>Social</h4>
+            <div className="flex justify-start md:justify-end mt-2">
+              <Social />
+            </div>
           </div>
         </div>
       </div>
 
       <footer className="mt-16 text-center">
-        <p className="text-sm work-sans-regular">Created with great ❤️ by Aslam Beg | All rights reserved</p>
+        <p className="text-sm text-gray-500">Created with ❤️ by Aslam Beg | All rights reserved</p>
       </footer>
-    </div>
+    </section>
   );
 }

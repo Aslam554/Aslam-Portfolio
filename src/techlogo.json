@@ -1,82 +1,94 @@
 {
-    "values":[
-        { 
-            "id":17,
-            "key":"C",
-            "val":"c.png"
-        },
-        { 
-            "id":1,
-            "key":"C++",
-            "val":"cpp.webp"
-        },
-        { 
-            "id":2,
-            "key":"Java",
-            "val":"java.webp"
-        },
-        { 
-            "id":18,
-            "key":"Python",
-            "val":"python.jpg"
-        },
-        { 
-            "id":3,
-            "key":"React.js",
-            "val":"react.webp"
-        },
-        { 
-            "id":4,
-            "key":"NodeJS",
-            "val":"node.webp"
-        },
-        { 
-            "id":5,
-            "key":"Express",
-            "val":"express.webp"
-        },
-        { 
-            "id":6,
-            "key":"HTML",
-            "val":"html.webp"
-        },
-        { 
-            "id":7,
-            "key":"CSS",
-            "val":"css.webp"
-        },
-        { 
-            "id":8,
-            "key":"Javascript",
-            "val":"js.webp"
-        },
-        { 
-            "id":9,
-            "key":"Tailwind CSS",
-            "val":"tailwind.webp"
-        },
-        { 
-            "id":10,
-            "key":"Bootstrap",
-            "val":"bootstrap.webp"
-        },
-        { 
-            "id":11,
-            "key":"Postman",
-            "val":"postman.webp"
-        },
-        
-        { 
-            "id":14,
-            "key":"MongoDB",
-            "val":"mongodb.webp"
-        },
-      
-        { 
-            "id":16,
-            "key":"Git/Github",
-            "val":"github.webp"
-        }
-       
-    ]
+  "values": [
+    { 
+      "id": 17,
+      "key": "C",
+      "val": "c.png",
+      "category": "programming"
+    },
+    { 
+      "id": 1,
+      "key": "C++",
+      "val": "cpp.webp",
+      "category": "programming"
+    },
+    { 
+      "id": 2,
+      "key": "Java",
+      "val": "java.webp",
+      "category": "programming"
+    },
+    { 
+      "id": 18,
+      "key": "Python",
+      "val": "python.jpg",
+      "category": "programming"
+    },
+    { 
+      "id": 3,
+      "key": "React.js",
+      "val": "react.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 4,
+      "key": "NodeJS",
+      "val": "node.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 5,
+      "key": "Express",
+      "val": "express.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 6,
+      "key": "HTML",
+      "val": "html.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 7,
+      "key": "CSS",
+      "val": "css.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 8,
+      "key": "Javascript",
+      "val": "js.webp",
+      "category": "programming"
+    },
+    { 
+      "id": 9,
+      "key": "Tailwind CSS",
+      "val": "tailwind.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 10,
+      "key": "Bootstrap",
+      "val": "bootstrap.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 11,
+      "key": "Postman",
+      "val": "postman.webp",
+      "category": "tools"
+    },
+    { 
+      "id": 14,
+      "key": "MongoDB",
+      "val": "mongodb.webp",
+      "category": "webdev"
+    },
+    { 
+      "id": 16,
+      "key": "Git/Github",
+      "val": "github.webp",
+      "category": "tools"
+    }
+  ]
 }

@@ -1,131 +1,133 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import {
+  FaTrophy, FaLinkedin, FaUserGraduate, FaChalkboardTeacher, FaLaptopCode, FaGlobe
+} from 'react-icons/fa';
+import {
+  SiLeetcode, SiHackerrank, SiCodeforces, SiCodechef
+} from 'react-icons/si';
 
-// Achievements and Offer Letter Data
-const achievements = [
-  "🌟 3★ Coder at Codechef (Max Rating: 1612)",
-  "🔥 Pupil at Codeforces (Max Rating: 1255)",
-  "🧠 Solved 580+ DSA problems on LeetCode (Max Rating: 1818)",
-  "🎯 4★ HackerRank DSA",
-  "💻 Total 850+ DSA questions solved",
-];
+const Achievements = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const controls = useAnimation();
 
-const offerImages = [
-  "/achievements/IMG-20250416-WA0009.jpg",
-  "/achievements/IMG-20250416-WA0001.jpg",
-  "/achievements/IMG-20250416-WA0002.jpg",
-  "/achievements/IMG-20250416-WA0003.jpg",
-  "/achievements/IMG-20250416-WA0004.jpg",
-  "/achievements/IMG-20250416-WA0005.jpg",
-  "/achievements/IMG-20250416-WA0006.jpg",
-  "/achievements/IMG-20250416-WA0007.jpg",
-  "/achievements/IMG-20250416-WA0008.jpg",
-];
+  const textGradient = 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400';
 
-// Shuffle function to randomize the images
-const shuffleArray = (array) => {
-  let shuffledArray = [...array];
-  for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-  }
-  return shuffledArray;
-};
+  const achievements = [
+    // 🧠 CODING
+    { icon: <SiLeetcode className="text-orange-500" />, title: "580+ Problems on LeetCode", description: "Max Rating: 1818 | Strong problem-solving consistency", category: "coding" },
+    { icon: <SiHackerrank className="text-green-400" />, title: "4★ HackerRank DSA", description: "Achieved 4-star badge in Data Structures and Algorithms", category: "coding" },
+    { icon: <SiCodechef className="text-purple-400" />, title: "CodeChef 3★", description: "Max Rating: 1612 | Regular Contest Participant", category: "coding" },
+    { icon: <SiCodeforces className="text-blue-400" />, title: "Codeforces Pupil", description: "Max Rating: 1255 | Focused on competitive problem solving", category: "coding" },
 
-const Achievement = () => {
-  // Randomly shuffle the offer images on every reload
-  const shuffledImages = shuffleArray(offerImages);
+    // 🎓 ACADEMIC
+    { icon: <FaUserGraduate className="text-cyan-400" />, title: "100/100 in Computer Science", description: "Perfect academic score in CS subject in board exams", category: "academic" },
+    { icon: <FaTrophy className="text-yellow-400" />, title: "AIR 28 - UCO Olympiad", description: "National Rank 28 in Unified Cyber Olympiad", category: "academic" },
 
-  // Group images in rows of 3
-  const rows = [];
-  for (let i = 0; i < shuffledImages.length; i += 3) {
-    rows.push(shuffledImages.slice(i, i + 3));
-  }
+    // 💼 PROFESSIONAL
+    { icon: <FaChalkboardTeacher className="text-pink-400" />, title: "Tutor at Aslam Coding", description: "Educating 1000s via YouTube and social platforms", category: "professional" },
+    { icon: <FaLaptopCode className="text-teal-400" />, title: "5x Internship Experience", description: "Worked at multiple startups in dev roles", category: "professional" },
+    { icon: <FaGlobe className="text-indigo-400" />, title: "2x US Freelance Projects", description: "Delivered full-stack freelance projects overseas", category: "professional" },
+    { icon: <FaLinkedin className="text-blue-500" />, title: "8.4K+ Followers on LinkedIn", description: "2M+ Impressions as a tech creator and mentor", category: "professional" },
+  ];
+
+  const filtered = activeFilter === 'all'
+    ? [...achievements, ...achievements]
+    : [...achievements.filter(a => a.category === activeFilter), ...achievements.filter(a => a.category === activeFilter)];
+
+  useEffect(() => {
+    if (isAutoScrolling) {
+      controls.start({
+        x: ['0%', '-50%'],
+        transition: {
+          duration: 30,
+          repeat: Infinity,
+          ease: "linear"
+        }
+      });
+    } else {
+      controls.stop();
+    }
+  }, [isAutoScrolling]);
 
   return (
-    <section className="bg-black text-white px-4 md:px-12 pt-24 pb-16" id="achievements">
-      <p className="text-white text-3xl font-bold">Achievements 🚀</p>
-      <div className="w-32 h-1 rounded-sm bg-gray-500 my-4"></div>
-
-      {/* DSA Section */}
-      <div className="mb-16">
-        <h3 className="text-xl font-semibold mb-3 text-[#00b09b]">
-          Problem Solving & DSA
-        </h3>
-        <ul className="space-y-2 text-base leading-relaxed">
-          {achievements.map((item, idx) => (
-            <motion.li
-              key={idx}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: idx * 0.1, type: "spring" }}
-              viewport={{ once: true }}
-            >
-              {item}
-            </motion.li>
-          ))}
-        </ul>
+    <section className="py-20 px-4 md:px-12 max-w-7xl mx-auto overflow-hidden">
+      <div className="text-center mb-12">
+        <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${textGradient}`}>
+          My Achievements 🚀
+        </h2>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          Coding, academic, and professional highlights from my journey.
+        </p>
       </div>
 
-      {/* Offer Letters Section */}
-      <h3 className="text-xl font-semibold mb-6 text-[#00b09b]">
-        Offer Letters 📄
-      </h3>
+      <div className="flex justify-center mb-10 flex-wrap gap-3">
+        {['all', 'coding', 'academic', 'professional'].map((filter) => (
+          <button
+            key={filter}
+            onClick={() => {
+              setActiveFilter(filter);
+              controls.start({ x: 0 });
+            }}
+            className={`px-4 py-1 rounded-full capitalize font-medium transition-all ${
+              activeFilter === filter
+                ? 'bg-cyan-700 text-white shadow'
+                : 'text-gray-300 hover:text-white hover:bg-gray-700'
+            }`}
+          >
+            {filter}
+          </button>
+        ))}
+      </div>
 
-      {rows.map((group, groupIdx) => (
-        <div key={groupIdx} className="relative mb-20">
-          {/* Grid Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
-            {group.map((src, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="w-[370px] h-[400px] rounded-2xl overflow-hidden backdrop-blur-md bg-white/5 border-2 border-white/10 hover:border-teal-300 shadow-lg transition-all duration-300 p-2 relative group"
-              >
-                <div className="absolute -top-5 -left-5 w-16 h-16 bg-teal-600/30 rounded-full blur-2xl z-0 group-hover:scale-110 transition-transform duration-300"></div>
-                <img
-                  src={src}
-                  alt={`Offer ${groupIdx * 3 + idx + 1}`}
-                  className="rounded-xl w-full h-full object-contain border border-white/10"
-                />
-              </motion.div>
-            ))}
-          </div>
+      <div
+        className="relative py-6"
+        onMouseEnter={() => setIsAutoScrolling(false)}
+        onMouseLeave={() => setIsAutoScrolling(true)}
+      >
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
 
-          {/* Arrow SVG between rows (skip last row) */}
-          {groupIdx !== rows.length - 1 && (
-            <div className="absolute left-1/2 -bottom-10 transform -translate-x-1/2 z-0">
-              <svg width="100" height="60" viewBox="0 0 100 60" fill="none">
-                <path
-                  d="M10 0 C50 40, 50 40, 90 0"
-                  stroke="#1f1f1f"  // Dark ink color
-                  strokeWidth="2"
-                  fill="none"
-                  strokeDasharray="5 5"
-                  markerEnd="url(#arrowhead)"
-                />
-                <defs>
-                  <marker
-                    id="arrowhead"
-                    markerWidth="6"
-                    markerHeight="6"
-                    refX="3"
-                    refY="3"
-                    orient="auto"
-                  >
-                    <polygon points="0 0, 6 3, 0 6" fill="#1f1f1f" />
-                  </marker>
-                </defs>
-              </svg>
-            </div>
-          )}
-        </div>
-      ))}
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={controls}
+          drag="x"
+          dragConstraints={{ left: -1000, right: 1000 }}
+        >
+          {filtered.map((item, idx) => (
+            <motion.div
+              key={idx}
+              className="flex-shrink-0 w-80 md:w-96"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -100px 0px" }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+            >
+              <div className="p-0.5 rounded-xl bg-gradient-to-br from-cyan-600/40 to-teal-400/40">
+                <div className="bg-gray-900 p-6 rounded-xl h-full flex flex-col">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="text-3xl p-3 rounded-lg bg-gray-800">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                      <p className="text-sm text-gray-400">{item.description}</p>
+                    </div>
+                  </div>
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    <span className="px-3 py-1 text-xs rounded-full bg-gray-700 text-cyan-300 capitalize">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };
 
-export default Achievement;
+export default Achievements;

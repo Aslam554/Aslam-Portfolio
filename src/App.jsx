@@ -7,7 +7,7 @@ import TeckStack from "./sections/TeckStack";
 import Projects from "./sections/Projects";
 import ContactMe from "./sections/ContactMe";
 import Achievement from "./sections/Achievement";
-
+import Experience from "./sections/Experience";
 function App() {
   useEffect(() => {
     window.history.scrollRestoration = "manual";
@@ -32,6 +32,9 @@ function App() {
       </div>
       <div id="tech-stack">
         <TeckStack />
+      </div>
+       <div id="experience">
+        <Experience />
       </div>
       <div id="projects">
         <Projects />

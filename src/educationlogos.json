@@ -6,7 +6,7 @@
         "logo":"tu.png",
         "branch": "Btech. Electronics and Communication Engineering",
         "year":"2024-2028",
-        "grade":"7.30 CGPA"
+        "grade":"7.61 CGPA"
     },
     { 
         "id":2,
@@ -14,7 +14,7 @@
         "logo":"cres.jpg",
         "branch": "CBSE 12th - Maths + Physical Education",
         "year":"2024",
-        "grade":85
+        "grade":"84.66 %"
     },
     { 
         "id":3,
@@ -22,7 +22,7 @@
         "logo":"stmr.jpg",
         "branch": "CISCE 10th - Maths, Science, English, Hindi, Social Science,Computer",
         "year":"2022",
-        "grade":97.33
+        "grade":"97.33 %"
     }
     
 ]
