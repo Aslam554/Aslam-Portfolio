@@ -30,12 +30,12 @@ export default function Hero() {
         <Typing
           text={[
             "I am a Full Stack Developer",
-            "Solved 580+ Leetcode DSA problems",
+            "Solved 830+ Leetcode DSA problems",
             "I am a Frontend Developer",
             "I am a Backend Developer",
             "I am a Competitive Coder & Problem Solver",
-            "Solved 115+ qsn 2⭐⭐Codechef",
-            "Solved 130+ qsn pupils max 1320 Codeforces",
+            "Solved 150+ qsn 3 ⭐⭐⭐Codechef",
+            "Solved 230+ qsn pupils max 1255 Codeforces",
             "4⭐ HackerRank DSA & Problem Solving",
           ]}
           className="text-lg md:text-2xl lg:text-4xl text-[#00b09b] font-medium"

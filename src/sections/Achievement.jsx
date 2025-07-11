@@ -16,7 +16,7 @@ const Achievements = () => {
 
   const achievements = [
     // 🧠 CODING
-    { icon: <SiLeetcode className="text-orange-500" />, title: "580+ Problems on LeetCode", description: "Max Rating: 1818 | Strong problem-solving consistency", category: "coding" },
+    { icon: <SiLeetcode className="text-orange-500" />, title: "830+ Problems on LeetCode", description: "Max Rating: 1818 | Strong problem-solving consistency", category: "coding" },
     { icon: <SiHackerrank className="text-green-400" />, title: "4★ HackerRank DSA", description: "Achieved 4-star badge in Data Structures and Algorithms", category: "coding" },
     { icon: <SiCodechef className="text-purple-400" />, title: "CodeChef 3★", description: "Max Rating: 1612 | Regular Contest Participant", category: "coding" },
     { icon: <SiCodeforces className="text-blue-400" />, title: "Codeforces Pupil", description: "Max Rating: 1255 | Focused on competitive problem solving", category: "coding" },
