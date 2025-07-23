@@ -45,10 +45,10 @@ export default function About() {
           <ul className="text-white text-base md:text-lg space-y-2 mb-6 leading-relaxed">
             <li>• B.Tech in ECE @ Tezpur University (Class of 2028)</li>
             <li>• 5x Internship experience at multiple startups</li>
-            <li>• Solved 850+ DSA problems (580+ on LeetCode, 4⭐ HackerRank)</li>
+            <li>• Solved 1350+ DSA problems (850+ on LeetCode, 4⭐ HackerRank)</li>
             <li>• CodeChef 3⭐ (Max 1612), Codeforces Pupil (Max 1255)</li>
             <li>• Intern @ Nemi Wealth working on financial tech</li>
-            <li>• 250K+ impressions as a tech mentor & LinkedIn creator</li>
+            <li>• 2M+ Impressions as a tech mentor & 8.6k+ followers @LinkedIn</li>
           </ul>
 
           {/* Lucide Icons */}
