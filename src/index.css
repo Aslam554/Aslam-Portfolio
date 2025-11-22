@@ -103,7 +103,7 @@
 }
 
 .border-animation:hover {
-  border-color: red;
+  border-color: #fb7185;
   animation: borderMove 1s linear infinite;
 }
 

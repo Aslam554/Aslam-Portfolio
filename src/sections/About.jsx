@@ -13,7 +13,7 @@ export default function About() {
       <p
         className="text-center text-2xl md:text-3xl font-extrabold tracking-wider mb-4 relative z-10"
         style={{
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, #fb7185, #ec4899, #f43f5e)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
@@ -31,13 +31,13 @@ export default function About() {
           <img
             src={photo}
             alt="Mirza Aslam Beg"
-            className="rounded-xl border-4 border-[#00b09b] shadow-lg w-full h-auto"
+            className="rounded-xl border-4 border-rose-400 shadow-lg w-full h-auto"
           />
         </div>
 
         {/* Info Section on Right */}
         <div className="lg:w-[60%] bg-[#1a1a1a] rounded-xl p-6 md:p-10 shadow-xl transform hover:scale-105 transition duration-500">
-          <h3 className="text-3xl font-bold mb-1 text-[#00b09b]">Aslam Beg</h3>
+          <h3 className="text-3xl font-bold mb-1 bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">Aslam Beg</h3>
           <p className="text-lg text-gray-400 mb-4">
             Full Stack Developer | 5x Intern | Nemi Wealth | Tech Influencer
           </p>
@@ -53,15 +53,15 @@ export default function About() {
 
           {/* Lucide Icons */}
           <div className="flex gap-6 items-center text-white mt-4 flex-wrap">
-            <div className="flex items-center gap-2 hover:text-[#00b09b] transition duration-300">
+            <div className="flex items-center gap-2 hover:text-rose-400 transition duration-300">
               <Briefcase size={20} />
               <span className="text-sm">Nemi Wealth</span>
             </div>
-            <div className="flex items-center gap-2 hover:text-[#00b09b] transition duration-300">
+            <div className="flex items-center gap-2 hover:text-rose-400 transition duration-300">
               <Youtube size={20} />
               <span className="text-sm">YouTube Channel</span>
             </div>
-            <div className="flex items-center gap-2 hover:text-[#00b09b] transition duration-300">
+            <div className="flex items-center gap-2 hover:text-rose-400 transition duration-300">
               <GraduationCap size={20} />
               <span className="text-sm">Tezpur University</span>
             </div>

@@ -8,7 +8,7 @@ const Experience = () => {
   useEffect(() => {
     const current = localStorage.getItem('theme') || 'cyan-teal';
     const gradients = {
-      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500',
+      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400',
       'blue-purple': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500',
       'red-orange': 'text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500',
       'green-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500',
@@ -66,7 +66,7 @@ const Experience = () => {
       </div>
 
       <div className="relative pl-8 sm:pl-12">
-        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-cyan-400 to-teal-500 opacity-20"></div>
+        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-rose-400 to-pink-500 opacity-20"></div>
 
         {experiences.map((exp, index) => (
           <motion.div
@@ -77,16 +77,16 @@ const Experience = () => {
             transition={{ delay: index * 0.2 }}
             className="relative mb-12 pl-8 sm:pl-12"
           >
-            <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-cyan-400 to-teal-500 shadow-md"></div>
+            <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-rose-400 to-pink-500 shadow-md"></div>
 
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-teal-400 transition-all duration-300 backdrop-blur-sm group"
+              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-rose-400 transition-all duration-300 backdrop-blur-sm group"
             >
               <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-lg bg-gradient-to-r from-cyan-400 to-teal-500 bg-opacity-10 group-hover:bg-opacity-20 transition-all">
-                  <span className="text-teal-300">{exp.icon}</span>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-lg bg-gradient-to-r from-rose-400 to-pink-500 bg-opacity-10 group-hover:bg-opacity-20 transition-all">
+                  <span className="text-rose-300">{exp.icon}</span>
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
@@ -99,7 +99,7 @@ const Experience = () => {
                     {exp.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-700 text-teal-300 hover:bg-teal-600/20 transition"
+                        className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-700 text-rose-300 hover:bg-rose-600/20 transition"
                       >
                         {skill}
                       </span>

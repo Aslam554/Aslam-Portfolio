@@ -11,7 +11,7 @@ export default function Education() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400"
         >
           Academic Journey
         </motion.h2>
@@ -27,20 +27,20 @@ export default function Education() {
               className="relative group"
             >
               {/* Timeline Dot */}
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 z-10 shadow-lg shadow-cyan-500/30"></div>
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 z-10 shadow-lg shadow-rose-500/30"></div>
 
               {/* Connector Line */}
               {index !== info.values.length - 1 && (
-                <div className="absolute left-0 top-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-500 to-teal-500 opacity-30"></div>
+                <div className="absolute left-0 top-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-rose-500 to-pink-500 opacity-30"></div>
               )}
 
               <div className="ml-8">
-                <div className="relative backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-700 group-hover:border-cyan-400/50 transition-all duration-300">
+                <div className="relative backdrop-blur-sm rounded-xl shadow-lg overflow-hidden border border-gray-700 group-hover:border-rose-400/50 transition-all duration-300">
                   {/* Glow Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Degree Ribbon */}
-                  <div className="absolute top-0 right-0 bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-1 text-sm font-bold rounded-bl-lg">
+                  <div className="absolute top-0 right-0 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-4 py-1 text-sm font-bold rounded-bl-lg">
                     {edu.branch?.toLowerCase().includes("master") ? "MASTERS" : "BACHELORS"}
                   </div>
 
@@ -49,11 +49,11 @@ export default function Education() {
                       whileHover={{ scale: 1.1 }}
                       className="flex-shrink-0 mb-6 md:mb-0 flex items-center justify-center"
                     >
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-3xl bg-gradient-to-br from-cyan-500/20 to-teal-500/20 border-2 border-cyan-400/30 group-hover:border-cyan-400 transition-all duration-300">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-3xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 border-2 border-rose-400/30 group-hover:border-rose-400 transition-all duration-300">
                         {edu.branch?.toLowerCase().includes("b.tech") ? (
-                          <FaUniversity className="text-cyan-400" />
+                          <FaUniversity className="text-rose-400" />
                         ) : (
-                          <FaGraduationCap className="text-cyan-400" />
+                          <FaGraduationCap className="text-rose-400" />
                         )}
                       </div>
                     </motion.div>
@@ -69,7 +69,7 @@ export default function Education() {
 
                       {/* Grade */}
                       <div className="inline-block border border-gray-600 rounded-full px-3 py-1 mb-4">
-                        <p className="text-sm font-medium text-cyan-300">{edu.grade}</p>
+                        <p className="text-sm font-medium text-rose-300">{edu.grade}</p>
                       </div>
 
                       {/* Skills */}
@@ -78,7 +78,7 @@ export default function Education() {
                           <motion.span
                             key={i}
                             whileHover={{ scale: 1.05 }}
-                            className="px-3 py-1 rounded-full bg-gradient-to-br from-gray-900 to-gray-800/50 text-xs md:text-sm font-medium text-cyan-300 border border-gray-600 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-300"
+                            className="px-3 py-1 rounded-full bg-gradient-to-br from-gray-900 to-gray-800/50 text-xs md:text-sm font-medium text-rose-300 border border-gray-600 hover:bg-rose-500/20 hover:border-rose-400 transition-all duration-300"
                           >
                             {skill}
                           </motion.span>

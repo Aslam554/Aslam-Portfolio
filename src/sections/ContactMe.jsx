@@ -12,7 +12,7 @@ export default function ContactMe() {
   useEffect(() => {
     const theme = localStorage.getItem('theme') || 'cyan-teal';
     const gradients = {
-      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500',
+      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400',
       'blue-purple': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500',
       'red-orange': 'text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500',
     };
@@ -90,7 +90,7 @@ export default function ContactMe() {
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Your name"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-teal-500"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-rose-500"
               />
               {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
@@ -103,7 +103,7 @@ export default function ContactMe() {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Your email"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-teal-500"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-rose-500"
               />
               {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
@@ -116,7 +116,7 @@ export default function ContactMe() {
                 onChange={handleInputChange}
                 placeholder="Your message"
                 rows={5}
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-teal-500"
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-rose-500"
               ></textarea>
               {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
             </div>
@@ -125,7 +125,7 @@ export default function ContactMe() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-semibold rounded-lg hover:opacity-90 transition"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-semibold rounded-lg hover:opacity-90 transition"
             >
               <FaPaperPlane /> Submit
             </motion.button>

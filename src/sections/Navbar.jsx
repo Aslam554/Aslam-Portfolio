@@ -66,7 +66,7 @@ const Navbar = () => {
   return (
     <nav
       className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#111]/90 py-2 border-b border-teal-600/30" : "bg-[#111]/70 py-3"
+        scrolled ? "bg-[#111]/90 py-2 border-b border-rose-500/30" : "bg-[#111]/70 py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -78,14 +78,14 @@ const Navbar = () => {
           onClick={scrollToTop}
         >
           <div className="relative">
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-teal-400 to-cyan-500 opacity-75 group-hover:opacity-100 blur-sm transition-all duration-300"></div>
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-rose-400 to-pink-500 opacity-75 group-hover:opacity-100 blur-sm transition-all duration-300"></div>
             <img
               src={logo}
               alt="Mirza Aslam Beg"
-              className="relative w-10 h-10 rounded-full object-cover border-2 border-white group-hover:border-teal-400 transition"
+              className="relative w-10 h-10 rounded-full object-cover border-2 border-white group-hover:border-rose-400 transition"
             />
           </div>
-          <h1 className="text-xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-xl font-bold bg-gradient-to-r from-rose-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
             Mirza Aslam Beg
           </h1>
         </motion.div>
@@ -98,7 +98,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`px-3 py-2 text-sm font-semibold rounded-md transition-all ${
                   active === item.id
-                    ? "text-white bg-gradient-to-r from-cyan-500 to-teal-500"
+                    ? "text-white bg-gradient-to-r from-rose-500 to-pink-500"
                     : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
                 data-aos="fade-up"
@@ -109,8 +109,8 @@ const Navbar = () => {
           ))}
           {/* Glowing Resume Button - Desktop */}
           <div className="relative ml-3 group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
-            <div className="relative px-4 py-2 rounded-xl font-semibold bg-black text-white border-2 border-white group-hover:border-teal-400 shadow transition-all duration-300">
+            <div className="absolute -inset-1 bg-gradient-to-r from-rose-500 to-pink-500 rounded-xl blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
+            <div className="relative px-4 py-2 rounded-xl font-semibold bg-black text-white border-2 border-white group-hover:border-rose-400 shadow transition-all duration-300">
               <ResumeButton />
             </div>
           </div>
@@ -137,7 +137,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`w-full max-w-xs text-center px-4 py-3 rounded-md text-lg font-medium transition-all ${
                   active === item.id
-                    ? "text-white bg-gradient-to-r from-cyan-500 to-teal-500"
+                    ? "text-white bg-gradient-to-r from-rose-500 to-pink-500"
                     : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -146,8 +146,8 @@ const Navbar = () => {
             ))}
             {/* Glowing Resume Button - Mobile */}
             <div className="relative w-full max-w-xs mt-3 group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-xl blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
-              <div className="relative py-2 rounded-xl font-semibold bg-black text-white text-center border-2 border-white group-hover:border-teal-400 shadow transition-all duration-300">
+              <div className="absolute -inset-1 bg-gradient-to-r from-rose-500 to-pink-500 rounded-xl blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
+              <div className="relative py-2 rounded-xl font-semibold bg-black text-white text-center border-2 border-white group-hover:border-rose-400 shadow transition-all duration-300">
                 <ResumeButton />
               </div>
             </div>

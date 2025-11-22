@@ -12,7 +12,7 @@ const Achievements = () => {
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
   const controls = useAnimation();
 
-  const textGradient = 'text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400';
+  const textGradient = 'text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400';
 
   const achievements = [
     // 🧠 CODING
@@ -72,7 +72,7 @@ const Achievements = () => {
             }}
             className={`px-4 py-1 rounded-full capitalize font-medium transition-all ${
               activeFilter === filter
-                ? 'bg-cyan-700 text-white shadow'
+                ? 'bg-rose-600 text-white shadow-lg shadow-rose-500/30'
                 : 'text-gray-300 hover:text-white hover:bg-gray-700'
             }`}
           >
@@ -104,7 +104,7 @@ const Achievements = () => {
               viewport={{ once: true, margin: "0px 0px -100px 0px" }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
             >
-              <div className="p-0.5 rounded-xl bg-gradient-to-br from-cyan-600/40 to-teal-400/40">
+              <div className="p-0.5 rounded-xl bg-gradient-to-br from-rose-600/40 to-pink-400/40">
                 <div className="bg-gray-900 p-6 rounded-xl h-full flex flex-col">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="text-3xl p-3 rounded-lg bg-gray-800">
@@ -116,7 +116,7 @@ const Achievements = () => {
                     </div>
                   </div>
                   <div className="mt-auto flex flex-wrap gap-2">
-                    <span className="px-3 py-1 text-xs rounded-full bg-gray-700 text-cyan-300 capitalize">
+                    <span className="px-3 py-1 text-xs rounded-full bg-gray-700 text-rose-300 capitalize">
                       {item.category}
                     </span>
                   </div>

@@ -1,6 +1,6 @@
 export default function ProjectBox({ pic, title, desc, github, website }) {
   return (
-    <div className="group relative flex flex-col justify-between border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:border-teal-400">
+    <div className="group relative flex flex-col justify-between border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:border-rose-400">
       {/* Project Image */}
       <div className="overflow-hidden">
         <img
@@ -34,7 +34,7 @@ export default function ProjectBox({ pic, title, desc, github, website }) {
               href={website}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-gradient-to-r from-teal-600 to-teal-800 hover:from-teal-700 hover:to-teal-900 text-white text-sm px-4 py-2 rounded-lg text-center transition-all duration-300"
+              className="flex-1 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white text-sm px-4 py-2 rounded-lg text-center transition-all duration-300"
             >
               Website
             </a>

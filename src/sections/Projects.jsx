@@ -33,10 +33,10 @@ export default function Projects() {
     <section className="bg-black text-white pt-24 px-4 sm:px-8 lg:px-16">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-teal-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-rose-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
           My Projects 🚀
         </h2>
-        <div className="w-20 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+        <div className="w-20 h-1 bg-rose-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-gray-400 mt-2 text-sm sm:text-base">
           Real-world projects showcasing my dev skills
         </p>
@@ -50,7 +50,7 @@ export default function Projects() {
             onClick={() => setActiveCategory(value)}
             className={`px-4 py-2 rounded-full capitalize text-sm font-medium transition-all border border-gray-700 ${
               activeCategory === value
-                ? "bg-cyan-600/30 text-cyan-300 border-cyan-400"
+                ? "bg-rose-600/30 text-rose-300 border-rose-400"
                 : "text-gray-400 hover:bg-gray-700/50"
             }`}
           >
