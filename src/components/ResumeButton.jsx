@@ -1,7 +1,7 @@
 export default function ResumeButton() {
   return (
     <a
-      href="https://drive.google.com/file/d/1z-QuCkPKPEdRfqnZD4NQg4-_qmznEmOa/view?usp=drive_link"
+      href="https://drive.google.com/file/d/1wwkSZCvoyolQuPFvVC3TJ6IppxibVtJi/view?usp=drivesdk"
       target="_blank"
     >
       <button>See My Resume</button>
