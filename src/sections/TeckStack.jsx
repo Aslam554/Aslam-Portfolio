@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-
-// Import react-icons
 import {
   FaReact,
   FaNode,
@@ -9,7 +6,6 @@ import {
   FaGitAlt,
   FaJs,
   FaDatabase,
- 
   FaJava,
   FaHtml5,
   FaCss3Alt,
@@ -18,109 +14,68 @@ import {
 import { SiCplusplus, SiC, SiTailwindcss, SiExpress, SiMongodb, SiPostman } from "react-icons/si";
 
 const iconMap = {
-  "React.js": <FaReact className="text-blue-400 text-4xl md:text-5xl" />,
-  "NodeJS": <FaNode className="text-green-500 text-4xl md:text-5xl" />,
-  "Express": <SiExpress className="text-white text-4xl md:text-5xl" />,
-  "Python": <FaPython className="text-yellow-400 text-4xl md:text-5xl" />,
-  "Javascript": <FaJs className="text-yellow-300 text-4xl md:text-5xl" />,
-  "TypeScript": <FaJs className="text-blue-400 text-4xl md:text-5xl" />,
-  "Java": <FaJava className="text-red-400 text-4xl md:text-5xl" />,
-  "C++": <SiCplusplus className="text-blue-300 text-4xl md:text-5xl" />,
-  "C": <SiC className="text-gray-300 text-4xl md:text-5xl" />,
-  "HTML": <FaHtml5 className="text-orange-500 text-4xl md:text-5xl" />,
-  "CSS": <FaCss3Alt className="text-blue-500 text-4xl md:text-5xl" />,
-  "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-4xl md:text-5xl" />,
-  "Bootstrap": <FaBootstrap className="text-purple-400 text-4xl md:text-5xl" />,
-  "Git/Github": <FaGitAlt className="text-orange-400 text-4xl md:text-5xl" />,
-  "Postman": <SiPostman className="text-orange-500 text-4xl md:text-5xl" />,
-  "MongoDB": <SiMongodb className="text-green-400 text-4xl md:text-5xl" />,
-  "Databases": <FaDatabase className="text-gray-300 text-4xl md:text-5xl" />,
-  
+  "React.js": <FaReact className="text-brand-cyan text-4xl" />,
+  "NodeJS": <FaNode className="text-brand-cyan text-4xl" />,
+  "Express": <SiExpress className="text-brand-cyan text-4xl" />,
+  "Python": <FaPython className="text-brand-cyan text-4xl" />,
+  "Javascript": <FaJs className="text-brand-cyan text-4xl" />,
+  "TypeScript": <FaJs className="text-brand-cyan text-4xl" />,
+  "Java": <FaJava className="text-brand-cyan text-4xl" />,
+  "C++": <SiCplusplus className="text-brand-cyan text-4xl" />,
+  "C": <SiC className="text-brand-cyan text-4xl" />,
+  "HTML": <FaHtml5 className="text-brand-cyan text-4xl" />,
+  "CSS": <FaCss3Alt className="text-brand-cyan text-4xl" />,
+  "Tailwind CSS": <SiTailwindcss className="text-brand-cyan text-4xl" />,
+  "Bootstrap": <FaBootstrap className="text-brand-cyan text-4xl" />,
+  "Git/Github": <FaGitAlt className="text-brand-cyan text-4xl" />,
+  "Postman": <SiPostman className="text-brand-cyan text-4xl" />,
+  "MongoDB": <SiMongodb className="text-brand-cyan text-4xl" />,
+  "Databases": <FaDatabase className="text-brand-cyan text-4xl" />,
 };
 
-// Tags for filters
-const filters = [
-  { label: "All", value: "all" },
-  { label: "Programming", value: "programming" },
-  { label: "Web Dev", value: "webdev" },
-  { label: "Tools", value: "tools" },
-];
-
-// Tech Stack JSON — Add category field here
 const techStack = [
-  { id: 1, key: "C", category: "programming" },
-  { id: 2, key: "C++", category: "programming" },
-  { id: 3, key: "Java", category: "programming" },
-  { id: 4, key: "Python", category: "programming" },
-  { id: 5, key: "React.js", category: "webdev" },
-  { id: 6, key: "NodeJS", category: "webdev" },
-  { id: 7, key: "Express", category: "webdev" },
-  { id: 8, key: "HTML", category: "webdev" },
-  { id: 9, key: "CSS", category: "webdev" },
-  { id: 10, key: "Javascript", category: "programming" },
-  { id: 11, key: "Tailwind CSS", category: "webdev" },
-  { id: 12, key: "Bootstrap", category: "webdev" },
-  { id: 13, key: "Postman", category: "tools" },
-  { id: 14, key: "MongoDB", category: "tools" },
-  { id: 15, key: "Git/Github", category: "tools" },
-  
+  { id: 1, key: "C" },
+  { id: 2, key: "C++" },
+  { id: 3, key: "Java" },
+  { id: 4, key: "Python" },
+  { id: 5, key: "React.js" },
+  { id: 6, key: "NodeJS" },
+  { id: 7, key: "Express" },
+  { id: 8, key: "HTML" },
+  { id: 9, key: "CSS" },
+  { id: 10, key: "Javascript" },
+  { id: 11, key: "Tailwind CSS" },
+  { id: 12, key: "Git/Github" },
+  { id: 13, key: "Postman" },
+  { id: 14, key: "MongoDB" },
 ];
 
 export default function TeckStack() {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filtered = techStack.filter(
-    (item) => activeCategory === "all" || item.category === activeCategory
-  );
-
   return (
-    <section className="bg-black text-white pt-24 px-4 sm:px-8 lg:px-16">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-rose-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
-          My Tech Stack 💻
-        </h2>
-        <div className="w-20 h-1 bg-rose-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-gray-400 mt-2 text-sm sm:text-base">
-          Tools & Technologies I use regularly
-        </p>
-      </div>
+    <section id="tech-stack" className="bg-black text-white py-24 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-left mb-16 border-l-4 border-brand-cyan pl-6">
+          <p className="text-brand-cyan font-bold tracking-widest text-sm mb-2 uppercase">Expertise</p>
+          <h2 className="text-4xl md:text-5xl font-black">
+            Technical <span className="text-brand-gradient">Skills</span>
+          </h2>
+        </div>
 
-      {/* Filters */}
-      <div className="flex justify-center flex-wrap gap-3 mb-10">
-        {filters.map(({ label, value }) => (
-          <button
-            key={value}
-            onClick={() => setActiveCategory(value)}
-            className={`px-4 py-2 rounded-full capitalize text-sm font-medium transition-all border border-gray-700 ${
-              activeCategory === value
-                ? "bg-rose-600/30 text-rose-300 border-rose-400"
-                : "text-gray-400 hover:bg-gray-700/50"
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-
-      {/* Tech Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        {filtered.map((tech, index) => (
-          <motion.div
-            key={tech.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.05 }}
-            className="group rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-white/10 p-5 shadow-md hover:shadow-xl backdrop-blur-lg hover:border-rose-400 transition-all duration-300"
-          >
-            <div className="flex flex-col items-center justify-center">
-              <div className="mb-3">{iconMap[tech.key]}</div>
-              <p className="text-sm text-white font-semibold group-hover:text-rose-300 transition">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
+          {techStack.map((tech) => (
+            <div
+              key={tech.id}
+              className="group p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-cyan/20 transition-all duration-300 flex flex-col items-center justify-center gap-4"
+            >
+              <div className="grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300">
+                {iconMap[tech.key]}
+              </div>
+              <p className="text-xs font-semibold text-gray-500 group-hover:text-white transition-colors">
                 {tech.key}
               </p>
             </div>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,119 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+    --color-brand-cyan: #22d3ee;
+    --color-brand-blue: #3b82f6;
+    --background-image-brand-gradient: linear-gradient(to right, #22d3ee, #3b82f6);
+    --font-sans: "Inter", "sans-serif", "system-ui";
+}
 
 * {
     scroll-behavior: smooth;
-    font-family: monospace;
-    font-weight: 100;
+    font-family: var(--font-sans);
 }
 
-.bgclass {
-    background-color: rgba(0, 0, 0, 0.5);
-    background-image: url('./images/hack.webp');
-    background-blend-mode: luminosity;
-    background-size: cover;
-    background-position: center;
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-.suse-title {
-    font-family: "SUSE", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+.text-brand-gradient {
+    background-image: var(--background-image-brand-gradient);
+    @apply bg-clip-text text-transparent;
 }
 
-.raleway-semibold {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+.bg-brand-gradient {
+    background-image: var(--background-image-brand-gradient);
 }
 
-.raleway-bold {
-    font-family: "Raleway", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
+.border-brand-soft {
+    @apply border border-white/10 hover:border-brand-cyan transition-colors duration-300;
 }
 
-.work-sans-regular {
-    font-family: "Work Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+.glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden;
 }
 
-/* Custom CSS for torch effect */
-.hero-section {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .pointer {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.5) 10%, transparent 60%);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.2s ease;
-    display: none;
-    z-index: 10; /* Ensure the pointer is above other elements */
-  }
-  
-  .hero-section:hover .pointer {
-    display: block;
-  }
-  
-  .hero-section:hover {
-    cursor: none; /* Hide default cursor */
-  }
-  
-  /* Ensure the navbar is always visible */
-  .navbar {
-    z-index: 20;
-    position: relative;
-  }
-/* Custom CSS for moving golden border effect */
-/* Custom CSS for moving golden border effect */
-@keyframes borderMove {
-  0% {
-    border-width: 3px 0 0 0;
-  }
-  25% {
-    border-width: 3px 3px 0 0;
-  }
-  50% {
-    border-width: 3px 3px 3px 0;
-  }
-  75% {
-    border-width: 3px 3px 3px 3px;
-  }
-  100% {
-    border-width: 3px;
-  }
+/* Modern Light Gray Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
 }
 
-.border-animation {
-  position: relative;
-  border: 3px solid gray;
-  
-  transition: border-color 0.5s ease;
+::-webkit-scrollbar-track {
+    background: #000;
 }
 
-.border-animation:hover {
-  border-color: #fb7185;
-  animation: borderMove 1s linear infinite;
+::-webkit-scrollbar-thumb {
+    background: #4d4d4d;
+    border-radius: 10px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
 
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4d4d4d #000;
+}
 
-
-@layer utilities{
-    .btns{
-        @apply  gap-4 rounded hover:bg-white hover:text-black  hover:rounded-bl-[15px] p-1 whitespace-nowrap hover:rounded-tr-[15px] hover:duration-300 hover:ease-in-out;
-       
+@layer utilities {
+    .btns {
+        @apply flex items-center gap-2 px-6 py-2 rounded-lg bg-brand-gradient text-white font-semibold transition-all duration-300 hover:opacity-90 active:scale-95;
     }
-   
 }

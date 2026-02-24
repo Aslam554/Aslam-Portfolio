@@ -1,31 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Social from "../components/Social";
-import { motion } from 'framer-motion';
 import { FaPaperPlane } from 'react-icons/fa';
 
 export default function ContactMe() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
-  const [errors, setErrors] = useState({});
-  const [textGradient, setTextGradient] = useState('text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500');
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme') || 'cyan-teal';
-    const gradients = {
-      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400',
-      'blue-purple': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500',
-      'red-orange': 'text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500',
-    };
-    setTextGradient(gradients[theme] || gradients['cyan-teal']);
-  }, []);
-
-  const validateForm = () => {
-    const errors = {};
-    if (!formData.name) errors.name = 'Name is required';
-    if (!formData.email) errors.email = 'Email is required';
-    if (!formData.message) errors.message = 'Message is required';
-    return errors;
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -34,12 +13,6 @@ export default function ContactMe() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const errors = validateForm();
-    if (Object.keys(errors).length > 0) {
-      setErrors(errors);
-      return;
-    }
-    setErrors({});
     setFormStatus('Submitting...');
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -51,110 +24,96 @@ export default function ContactMe() {
         }),
       });
       if (response.ok) {
-        setFormStatus('Success! Thank you for your message.');
+        setFormStatus('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setFormStatus('Failed to send your message. Please try again later.');
+        setFormStatus('Failed to send.');
       }
     } catch (error) {
-      setFormStatus('An error occurred. Please try again later.');
+      setFormStatus('An error occurred.');
     }
   };
 
   return (
-    <section className="py-16 px-4 md:px-16 max-w-7xl mx-auto" id="contact">
-      <div className="text-center mb-12">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className={`text-4xl md:text-5xl font-bold mb-4 ${textGradient}`}
-        >
-          Contact Me
-        </motion.h2>
-        <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-          Want to get in touch? Fill the form or message me directly.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        <div className="bg-gray-900/80 p-6 rounded-xl backdrop-blur-md border border-gray-800">
-          <h3 className={`text-xl font-bold mb-6 ${textGradient}`}>Send a Message</h3>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="text-gray-300 text-sm">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Your name"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-rose-500"
-              />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-            </div>
-
-            <div>
-              <label className="text-gray-300 text-sm">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Your email"
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-rose-500"
-              />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-            </div>
-
-            <div>
-              <label className="text-gray-300 text-sm">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder="Your message"
-                rows={5}
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-rose-500"
-              ></textarea>
-              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-500 text-white font-semibold rounded-lg hover:opacity-90 transition"
-            >
-              <FaPaperPlane /> Submit
-            </motion.button>
-            {formStatus && <p className="text-sm text-green-400 mt-2">{formStatus}</p>}
-          </form>
-        </div>
-
-        <div className="text-left md:text-right">
-          <div className="mb-6">
-            <h4 className={`text-lg font-semibold ${textGradient}`}>Email</h4>
-            <p className="text-white text-xl mt-1">begaslam405@gmail.com</p>
+    <section id="contact-me" className="py-24 px-6 md:px-12 bg-black text-white">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+        <div className="lg:w-1/3">
+          <div className="text-left border-l-4 border-brand-cyan pl-6">
+            <p className="text-brand-cyan font-bold tracking-widest text-sm mb-2 uppercase">Connect</p>
+            <h2 className="text-4xl md:text-5xl font-black">
+              Get In <span className="text-brand-gradient">Touch</span>
+            </h2>
           </div>
 
-          <div className="mb-6">
-            <h4 className={`text-lg font-semibold ${textGradient}`}>Location</h4>
-            <p className="text-white text-xl mt-1">Ghazipur, Uttar Pradesh</p>
-          </div>
-
-          <div className="mb-6">
-            <h4 className={`text-lg font-semibold ${textGradient}`}>Social</h4>
-            <div className="flex justify-start md:justify-end mt-2">
+          <div className="mt-12 space-y-8">
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2">Email</p>
+              <p className="text-xl font-bold hover:text-brand-cyan transition-colors">begaslam405@gmail.com</p>
+            </div>
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2">Location</p>
+              <p className="text-xl font-bold">Ghazipur, Uttar Pradesh</p>
+            </div>
+            <div>
+              <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2">Follow</p>
               <Social />
             </div>
           </div>
         </div>
+
+        <div className="lg:w-2/3">
+          <form onSubmit={handleSubmit} className="space-y-6 bg-white/[0.02] p-10 rounded-3xl border border-white/5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-gray-500">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="John Doe"
+                  className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white focus:outline-none focus:border-brand-cyan transition-colors"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-gray-500">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="john@example.com"
+                  className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white focus:outline-none focus:border-brand-cyan transition-colors"
+                />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-black uppercase tracking-widest text-gray-500">Message</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder="How can I help you?"
+                rows={4}
+                className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white focus:outline-none focus:border-brand-cyan transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="flex items-center gap-3 px-10 py-4 bg-brand-gradient text-white font-black uppercase tracking-widest text-sm rounded-full hover:opacity-90 transition-all active:scale-95"
+            >
+              Send Message <FaPaperPlane size={14} />
+            </button>
+            {formStatus && <p className="text-sm text-brand-cyan font-bold mt-4">{formStatus}</p>}
+          </form>
+        </div>
       </div>
 
-      <footer className="mt-16 text-center">
-        <p className="text-sm text-gray-500">Created with ❤️ by Aslam Beg | All rights reserved</p>
+      <footer className="mt-24 pt-12 border-t border-white/5 text-center">
+        <p className="text-xs font-medium text-gray-600 uppercase tracking-widest animate-pulse">
+          Crafted with focus by Aslam Beg
+        </p>
       </footer>
     </section>
   );
