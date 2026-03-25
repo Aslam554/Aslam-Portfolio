@@ -19,7 +19,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-24 px-6 md:px-12 bg-black text-white">
+    <section id="achievements" className="py-24 px-6 md:px-12 bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="text-left mb-16 border-l-4 border-brand-cyan pl-6">
           <p className="text-brand-cyan font-bold tracking-widest text-sm mb-2 uppercase">Success</p>
@@ -32,13 +32,13 @@ const Achievements = () => {
           {achievements.map((item, idx) => (
             <div
               key={idx}
-              className="group p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-cyan/20 transition-all duration-300"
+              className="group p-6 rounded-2xl border border-black/5 dark:border-white/5 bg-gray-50 dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.05] hover:border-brand-cyan/20 transition-all duration-300"
             >
               <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition-all">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-              <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">{item.description}</p>
+              <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-white">{item.title}</h3>
+              <p className="text-sm text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">{item.description}</p>
               <span className="inline-block mt-4 text-[10px] uppercase font-black tracking-widest text-brand-cyan opacity-50">
                 {item.category}
               </span>

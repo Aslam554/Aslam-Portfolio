@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import ResumeButton from "../components/ResumeButton";
+import ThemeToggle from "../components/ThemeToggle";
 import logo from "../images/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const [active, setActive] = useState("hero");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -54,7 +55,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="w-full fixed top-0 z-50 transition-all duration-300 bg-black/80 py-3 border-b border-white/5 backdrop-blur-md"
+      className="w-full fixed top-0 z-50 transition-all duration-300 bg-white/80 dark:bg-black/80 py-3 border-b border-black/5 dark:border-white/5 backdrop-blur-md"
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo and Name */}
@@ -65,7 +66,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="w-8 h-8 rounded-full border border-white/20 transition-colors group-hover:border-brand-cyan"
+            className="w-8 h-8 rounded-full border border-black/10 dark:border-white/20 transition-colors group-hover:border-brand-cyan"
           />
           <h1 className="text-lg font-bold text-brand-gradient">
             Aslam Beg
@@ -81,7 +82,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors ${active === item.id
                     ? "text-brand-cyan"
-                    : "text-gray-400 hover:text-white"
+                    : "text-gray-600 dark:text-gray-400 hover:text-brand-cyan dark:hover:text-white"
                     }`}
                 >
                   {item.name}
@@ -89,32 +90,37 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <div className="h-4 w-px bg-white/10"></div>
+          <div className="h-4 w-px bg-black/10 dark:bg-white/10"></div>
+          <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
           <ResumeButton />
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white hover:text-brand-cyan transition-colors"
+          className="md:hidden text-gray-800 dark:text-white hover:text-brand-cyan transition-colors"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Mobile Menu Overlay */}
         {menuOpen && (
-          <div className="md:hidden fixed inset-0 top-[60px] bg-black/95 z-40 p-6 flex flex-col gap-6">
+          <div className="md:hidden fixed inset-0 top-[60px] bg-white/95 dark:bg-black/95 z-40 p-6 flex flex-col gap-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-left text-2xl font-bold ${active === item.id ? "text-brand-cyan" : "text-white"
+                className={`text-left text-2xl font-bold transition-colors ${active === item.id ? "text-brand-cyan" : "text-gray-800 dark:text-white hover:text-brand-cyan"
                   }`}
               >
                 {item.name}
               </button>
             ))}
-            <div className="mt-4">
+            <div className="mt-4 flex flex-col gap-6">
+              <div className="flex items-center justify-between">
+                <span className="text-gray-600 dark:text-gray-400 font-medium">Switch Theme</span>
+                <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+              </div>
               <ResumeButton />
             </div>
           </div>

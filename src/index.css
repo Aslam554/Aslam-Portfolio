@@ -7,16 +7,24 @@
     --font-sans: "Inter", "sans-serif", "system-ui";
 }
 
+@variant dark (&:where(.dark, .dark *));
+
 * {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
 .text-brand-gradient {
@@ -29,11 +37,19 @@ body {
 }
 
 .border-brand-soft {
-    @apply border border-white/10 hover:border-brand-cyan transition-colors duration-300;
+    @apply border border-black/10 hover:border-brand-cyan transition-colors duration-300;
+}
+
+.dark .border-brand-soft {
+    @apply border-white/10;
 }
 
 .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden;
+    @apply bg-white/50 backdrop-blur-md border border-black/10 rounded-xl overflow-hidden shadow-sm;
+}
+
+.dark .glass-card {
+    @apply bg-white/5 border-white/10 shadow-none;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

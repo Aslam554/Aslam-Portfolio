@@ -35,7 +35,7 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="contact-me" className="py-24 px-6 md:px-12 bg-black text-white">
+    <section id="contact-me" className="py-24 px-6 md:px-12 bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
         <div className="lg:w-1/3">
           <div className="text-left border-l-4 border-brand-cyan pl-6">
@@ -48,11 +48,11 @@ export default function ContactMe() {
           <div className="mt-12 space-y-8">
             <div>
               <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2">Email</p>
-              <p className="text-xl font-bold hover:text-brand-cyan transition-colors">begaslam405@gmail.com</p>
+              <p className="text-xl font-bold text-gray-900 dark:text-white hover:text-brand-cyan transition-colors">begaslam405@gmail.com</p>
             </div>
             <div>
               <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2">Location</p>
-              <p className="text-xl font-bold">Ghazipur, Uttar Pradesh</p>
+              <p className="text-xl font-bold text-gray-900 dark:text-white">Ghazipur, Uttar Pradesh</p>
             </div>
             <div>
               <p className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2">Follow</p>
@@ -62,7 +62,7 @@ export default function ContactMe() {
         </div>
 
         <div className="lg:w-2/3">
-          <form onSubmit={handleSubmit} className="space-y-6 bg-white/[0.02] p-10 rounded-3xl border border-white/5">
+          <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 dark:bg-white/[0.02] p-10 rounded-3xl border border-black/5 dark:border-white/5 shadow-sm dark:shadow-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-gray-500">Name</label>
@@ -95,7 +95,7 @@ export default function ContactMe() {
                 onChange={handleInputChange}
                 placeholder="How can I help you?"
                 rows={4}
-                className="w-full px-0 py-3 bg-transparent border-b border-white/10 text-white focus:outline-none focus:border-brand-cyan transition-colors resize-none"
+                className="w-full px-0 py-3 bg-transparent border-b border-black/10 dark:border-white/10 text-gray-900 dark:text-white focus:outline-none focus:border-brand-cyan transition-colors resize-none"
               ></textarea>
             </div>
 
@@ -110,8 +110,8 @@ export default function ContactMe() {
         </div>
       </div>
 
-      <footer className="mt-24 pt-12 border-t border-white/5 text-center">
-        <p className="text-xs font-medium text-gray-600 uppercase tracking-widest animate-pulse">
+      <footer className="mt-24 pt-12 border-t border-black/5 dark:border-white/5 text-center">
+        <p className="text-xs font-medium text-gray-400 dark:text-gray-600 uppercase tracking-widest animate-pulse">
           Crafted with focus by Aslam Beg
         </p>
       </footer>

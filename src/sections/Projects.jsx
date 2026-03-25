@@ -6,7 +6,7 @@ export default function Projects() {
   const displayProjects = projectsData.projects.slice(0, 6);
 
   return (
-    <section id="projects" className="bg-black text-white py-20 px-6 md:px-12">
+    <section id="projects" className="bg-white dark:bg-black text-gray-900 dark:text-white py-20 px-6 md:px-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="text-left mb-16 border-l-4 border-brand-cyan pl-6">
           <p className="text-brand-cyan font-bold tracking-widest text-xs mb-2 uppercase">Work</p>

@@ -66,7 +66,7 @@ export default function TeckStack() {
     : allSkills.filter(skill => skill.category === selectedCategory);
 
   return (
-    <section id="tech-stack" className="bg-black text-white py-20 px-6 md:px-12">
+    <section id="tech-stack" className="bg-white dark:bg-black text-gray-900 dark:text-white py-20 px-6 md:px-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8 border-l-4 border-brand-cyan pl-6">
           <div>
@@ -84,7 +84,7 @@ export default function TeckStack() {
                 className={`px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 border ${
                   selectedCategory === cat 
                   ? "bg-brand-gradient text-white border-transparent shadow-lg shadow-brand-cyan/20" 
-                  : "bg-white/5 text-gray-400 border-white/10 hover:border-brand-cyan hover:text-white"
+                  : "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-white/10 hover:border-brand-cyan hover:text-brand-cyan dark:hover:text-white"
                 }`}
               >
                 {cat}
@@ -103,12 +103,12 @@ export default function TeckStack() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3 }}
-                className="group p-5 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-cyan/20 transition-all duration-300 flex flex-col items-center justify-center gap-4"
+                className="group p-5 rounded-2xl border border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-white/[0.02] hover:bg-gray-100 dark:hover:bg-white/[0.05] hover:border-brand-cyan/20 transition-all duration-300 flex flex-col items-center justify-center gap-4"
               >
                 <div className="grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300">
                   {iconMap[skill.name] || <FaDatabase className="text-brand-cyan text-3xl" />}
                 </div>
-                <p className="text-xs font-semibold text-gray-500 group-hover:text-white transition-colors">
+                <p className="text-xs font-semibold text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                   {skill.name}
                 </p>
               </motion.div>

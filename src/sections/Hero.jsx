@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-24 pb-20 px-6 md:px-24 overflow-hidden bg-black"
+      className="relative min-h-screen flex items-center pt-24 pb-20 px-6 md:px-24 overflow-hidden bg-white dark:bg-black transition-colors duration-300"
     >
       {/* Background Glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-cyan/10 rounded-full blur-[140px] -z-10 animate-pulse"></div>
@@ -22,7 +22,7 @@ export default function Hero() {
             <p className="text-[#00e0ff] font-bold tracking-[2px] text-sm mb-3 uppercase opacity-90">
               Introduction
             </p>
-            <h1 className="text-5xl md:text-[64px] font-extrabold tracking-tight leading-[1.1] text-white hover:text-brand-cyan transition-colors duration-500 cursor-default">
+            <h1 className="text-5xl md:text-[64px] font-extrabold tracking-tight leading-[1.1] text-gray-900 dark:text-white hover:text-brand-cyan transition-colors duration-500 cursor-default">
               MIRZA <span className="text-brand-gradient">ASLAM BEG</span>
             </h1>
           </div>
@@ -31,7 +31,7 @@ export default function Hero() {
             <h2 className="text-xl md:text-[22px] font-semibold text-[#00e0ff]">
               Building Apps & Scalable Web Products
             </h2>
-            <div className="text-xl md:text-[22px] font-semibold text-gray-300">
+            <div className="text-xl md:text-[22px] font-semibold text-gray-600 dark:text-gray-300">
               <ReactTypingEffect
                 text={["Full Stack Developer", "React Native Developer", "UI/UX Specialist"]}
                 speed={70}
@@ -44,15 +44,15 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <p className="text-sm md:text-base text-[#b0b0b0] font-medium tracking-wide">
+            <p className="text-sm md:text-base text-gray-500 dark:text-[#b0b0b0] font-medium tracking-wide">
               5× Intern • 3× Freelance (USA, Saudi)
             </p>
-            <p className="text-sm md:text-base text-[#b0b0b0] font-medium tracking-wide">
+            <p className="text-sm md:text-base text-gray-500 dark:text-[#b0b0b0] font-medium tracking-wide">
               1000+ LeetCode • 4M+ Impressions • 11K+ Audience
             </p>
           </div>
 
-          <p className="text-sm md:text-base text-[#e0e0e0] max-w-[500px] leading-relaxed border-l-2 border-brand-cyan/30 pl-4 py-1 italic">
+          <p className="text-sm md:text-base text-gray-700 dark:text-[#e0e0e0] max-w-[500px] leading-relaxed border-l-2 border-brand-cyan/30 dark:border-brand-cyan/30 pl-4 py-1 italic">
             I build fast, clean, production-ready applications — not just projects.
           </p>
 
@@ -68,7 +68,7 @@ export default function Hero() {
             {/* Image Glow */}
             <div className="absolute inset-0 bg-brand-cyan/20 rounded-[20px] blur-[40px] group-hover:bg-brand-cyan/40 transition-all duration-700"></div>
 
-            <div className="relative z-10 w-full max-w-[350px] aspect-[4/5] rounded-[20px] overflow-hidden border border-white/10 shadow-[0_10px_40px_rgba(0,224,255,0.2)] hover:scale-[1.02] transition-transform duration-500">
+            <div className="relative z-10 w-full max-w-[350px] aspect-[4/5] rounded-[20px] overflow-hidden border border-black/10 dark:border-white/10 shadow-[0_10px_40px_rgba(0,224,255,0.1)] dark:shadow-[0_10px_40px_rgba(0,224,255,0.2)] hover:scale-[1.02] transition-transform duration-500">
               <img
                 src={profileImage}
                 alt="Mirza Aslam Beg"

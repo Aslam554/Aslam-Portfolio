@@ -1,6 +1,6 @@
 export default function ProjectBox({ pic, title, desc, github, website, category }) {
   return (
-    <div className="group relative flex flex-col justify-between border border-white/5 rounded-2xl overflow-hidden bg-[#0a0a0a] backdrop-blur-md hover:border-brand-cyan/40 transition-all duration-300">
+    <div className="group relative flex flex-col justify-between border border-black/5 dark:border-white/5 rounded-2xl overflow-hidden bg-white dark:bg-[#0a0a0a] backdrop-blur-md hover:border-brand-cyan/40 transition-all duration-300 shadow-sm hover:shadow-lg dark:shadow-none">
       {/* Project Image */}
       <div className="relative h-44 overflow-hidden bg-black">
         <img
@@ -8,16 +8,16 @@ export default function ProjectBox({ pic, title, desc, github, website, category
           alt={title}
           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#0a0a0a] via-transparent to-transparent"></div>
       </div>
 
       {/* Project Content */}
       <div className="flex flex-col justify-between flex-grow p-5 space-y-4">
         <div>
-          <h3 className="text-lg font-black text-white mb-2 tracking-tight group-hover:text-brand-gradient transition-colors">
+          <h3 className="text-lg font-black text-gray-900 dark:text-white mb-2 tracking-tight group-hover:text-brand-gradient transition-colors">
             {title}
           </h3>
-          <p className="text-gray-400 text-xs leading-relaxed line-clamp-3 font-medium">
+          <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed line-clamp-3 font-medium">
             {desc}
           </p>
         </div>
@@ -28,7 +28,7 @@ export default function ProjectBox({ pic, title, desc, github, website, category
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 px-4 py-2 rounded-lg border border-white/5 text-gray-400 font-bold text-[10px] uppercase tracking-widest text-center hover:bg-white/10 hover:text-white transition-all"
+            className="flex-1 px-4 py-2 rounded-lg border border-black/10 dark:border-white/5 text-gray-500 dark:text-gray-400 font-bold text-[10px] uppercase tracking-widest text-center hover:bg-gray-100 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white transition-all"
           >
             Code
           </a>

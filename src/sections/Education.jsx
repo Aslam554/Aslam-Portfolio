@@ -4,7 +4,7 @@ import info from "../educationlogos.json";
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 px-6 md:px-12 bg-black text-white max-w-7xl mx-auto">
+    <section id="education" className="py-20 px-6 md:px-12 bg-white dark:bg-black text-gray-900 dark:text-white max-w-7xl mx-auto transition-colors duration-300">
       <div className="">
         <div className="text-left mb-12 border-l-4 border-brand-cyan pl-6">
           <p className="text-brand-cyan font-bold tracking-widest text-xs mb-2 uppercase">Learning</p>
@@ -17,7 +17,7 @@ export default function Education() {
           {info?.values?.map((edu) => (
             <div
               key={edu.id}
-              className="group p-6 md:p-8 rounded-3xl border border-white/5 bg-[#0a0a0a] backdrop-blur-sm hover:border-brand-cyan/20 transition-all duration-300 relative overflow-hidden"
+              className="group p-6 md:p-8 rounded-3xl border border-black/5 dark:border-white/5 bg-gray-50 dark:bg-[#0a0a0a] backdrop-blur-sm hover:border-brand-cyan/20 transition-all duration-300 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
                 {edu.branch?.toLowerCase().includes("b.tech") ? (
@@ -32,16 +32,16 @@ export default function Education() {
                   <span className="text-xs font-bold text-brand-cyan bg-brand-cyan/10 px-3 py-1 rounded-full uppercase tracking-widest">
                     {edu.year}
                   </span>
-                  <h3 className="text-2xl font-black text-white tracking-tight group-hover:text-brand-gradient transition-colors">
+                  <h3 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight group-hover:text-brand-gradient transition-colors">
                     {edu.name}
                   </h3>
-                  <p className="text-gray-400 font-medium">{edu.branch}</p>
+                  <p className="text-gray-500 dark:text-gray-400 font-medium">{edu.branch}</p>
                 </div>
 
                 <div className="flex-shrink-0">
                   <div className="bg-brand-cyan/5 border border-brand-cyan/10 px-6 py-3 rounded-2xl">
                     <p className="text-brand-cyan text-xs font-black uppercase tracking-widest">
-                      Grade: <span className="text-white ml-2 text-lg">{edu.grade}</span>
+                      Grade: <span className="text-gray-900 dark:text-white ml-2 text-lg">{edu.grade}</span>
                     </p>
                   </div>
                 </div>

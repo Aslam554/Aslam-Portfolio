@@ -51,13 +51,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+    <section id="experience" className="py-20 px-6 md:px-12 max-w-7xl mx-auto bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300">
       <div className="text-left mb-16 border-l-4 border-brand-cyan pl-6">
         <p className="text-brand-cyan font-bold tracking-widest text-xs mb-2 uppercase">Work Experience</p>
         <h2 className="text-3xl md:text-4xl font-black mb-2">
           Real Impact. <span className="text-brand-gradient">Real Results.</span>
         </h2>
-        <p className="text-gray-400 text-xs italic">Building products that solve real problems.</p>
+        <p className="text-gray-500 dark:text-gray-400 text-xs italic">Building products that solve real problems.</p>
       </div>
 
       <div className="relative pl-8 sm:pl-12">
@@ -72,7 +72,7 @@ const Experience = () => {
             <div className="absolute left-0 top-7 transform -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-brand-cyan shadow-[0_0_10px_#00e0ff]"></div>
 
             {/* Clean Experience Card */}
-            <div className="bg-[#0a0a0a] p-5 md:p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+            <div className="bg-gray-50 dark:bg-[#0a0a0a] p-5 md:p-6 rounded-2xl border border-black/5 dark:border-white/5 backdrop-blur-sm">
               <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8">
                 {/* Left Side: Meta & Icon */}
                 <div className="space-y-4">
@@ -81,8 +81,8 @@ const Experience = () => {
                       <span className="text-brand-cyan text-xl">{exp.icon}</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-black text-white tracking-tight">{exp.title}</h3>
-                      <span className="text-[10px] font-bold text-gray-500 bg-white/5 px-2 py-0.5 rounded-full inline-block mt-1">{exp.duration}</span>
+                      <h3 className="text-lg font-black text-gray-900 dark:text-white tracking-tight">{exp.title}</h3>
+                      <span className="text-[10px] font-bold text-gray-500 bg-black/5 dark:bg-white/5 px-2 py-0.5 rounded-full inline-block mt-1">{exp.duration}</span>
                     </div>
                   </div>
 
@@ -106,7 +106,7 @@ const Experience = () => {
                     {exp.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-1 text-[8px] font-bold uppercase rounded-full bg-white/5 text-gray-500 border border-white/5 hover:border-brand-cyan/20 transition-all cursor-default"
+                        className="px-2.5 py-1 text-[8px] font-bold uppercase rounded-full bg-black/5 dark:bg-white/5 text-gray-500 border border-black/5 dark:border-white/5 hover:border-brand-cyan/20 transition-all cursor-default"
                       >
                         {skill}
                       </span>
@@ -115,17 +115,17 @@ const Experience = () => {
                 </div>
 
                 {/* Right Side: Impact & Bullets */}
-                <div className="space-y-4 lg:border-l lg:border-white/5 lg:pl-8">
+                <div className="space-y-4 lg:border-l lg:border-black/5 dark:lg:border-white/5 lg:pl-8">
                   {/* Impact Highlight */}
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-cyan/5 border border-brand-cyan/10 rounded-lg w-full lg:w-auto">
                     <span className="text-[10px] font-bold text-brand-cyan tracking-wide uppercase">
-                      Key Impact: <span className="text-gray-300 ml-1 normal-case font-medium">{exp.keyImpact}</span>
+                      Key Impact: <span className="text-gray-600 dark:text-gray-300 ml-1 normal-case font-medium">{exp.keyImpact}</span>
                     </span>
                   </div>
 
                   <ul className="space-y-2.5 list-none">
                     {exp.points.map((point, i) => (
-                      <li key={i} className="text-gray-400 text-sm leading-relaxed flex items-start gap-3">
+                      <li key={i} className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex items-start gap-3">
                         <span className="text-brand-cyan mt-2 w-1.5 h-1.5 rounded-full bg-brand-cyan/40"></span>
                         {point}
                       </li>
