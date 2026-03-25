@@ -9,11 +9,6 @@ export default function ProjectBox({ pic, title, desc, github, website, category
           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
-        {category && (
-          <div className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-black/60 border border-white/10 backdrop-blur-md">
-            <span className="text-[9px] font-bold text-brand-cyan uppercase tracking-widest">{category}</span>
-          </div>
-        )}
       </div>
 
       {/* Project Content */}

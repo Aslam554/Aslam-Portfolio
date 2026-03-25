@@ -2,102 +2,57 @@
   "projects": [
     {
       "id": 1,
-      "pic": "aslamstore.png",
+      "title": "Learn With Aslam",
+      "pic": "learnwithaslam.png",
+      "desc": "An EdTech platform empowering 100+ students to master coding and personal branding. Leveraging a 3.5M+ LinkedIn reach for maximum student impact.",
+      "github": "https://github.com/Aslam554",
+      "website": "https://learnwithaslam.vercel.app/",
+      "category": "Full Stack"
+    },
+    {
+      "id": 2,
+      "title": "ArabicO - EdTech Saudi Arabia",
+      "pic": "arabico.png",
+      "desc": "Built a complete Arabic learning platform from scratch — serving 100+ students. Automated lead flow & automated booking systems.",
+      "github": "https://github.com/Aslam554",
+      "website": "https://www.arabico.online",
+      "category": "Full Stack"
+    },
+    {
+      "id": 3,
       "title": "Aslam StoreN",
-      "desc": "An E-commerce website with Stripe integration, cart system, admin & user panels, add/delete products and featured products.",
+      "pic": "aslamstore.png",
+      "desc": "An E-commerce website with Stripe integration, cart system, admin & user panels, and featured products management.",
       "github": "https://github.com/Aslam554/Aslam-StoreN",
       "website": "https://aslam-storen-1.onrender.com/",
       "category": "Full Stack"
     },
     {
-      "id": 2,
-      "pic": "postgrsstore.png",
+      "id": 4,
       "title": "Postgres Store",
-      "desc": "A store management system with smooth UI using PostgreSQL for full CRUD operations.",
+      "pic": "postgrsstore.png",
+      "desc": "A store management system with smooth UI using PostgreSQL for full CRUD operations and efficient data retrieval.",
       "github": "https://github.com/Aslam554/pern-store",
       "website": "https://pern-store-7jcp.onrender.com/",
       "category": "Full Stack"
     },
     {
-      "id": 3,
+      "id": 5,
+      "title": "Rich Text Editor (AI Powered)",
       "pic": "richtext.png",
-      "title": "Rich Text Editor with Gemini AI",
-      "desc": "A smart editor with file creation, deletion, saving, and AI-powered content suggestions.",
+      "desc": "A smart editor with Gemini AI integration. Features contextual content suggestions, full file management, and minimalist UI.",
       "github": "https://github.com/Aslam554/Rich-Text-Editor",
       "website": "https://richtexteditors.netlify.app/",
       "category": "AI"
     },
     {
-      "id": 4,
+      "id": 6,
+      "title": "Aslam Blog Platform",
       "pic": "blogsite.png",
-      "title": "Aslam Coding Blog Writing Website",
-      "desc": "Blog platform with admin/user panels, CRUD operations, and YouTube data integration.",
+      "desc": "Blog platform with admin/user panels, full CRUD, and YouTube data integration for developers and tech writers.",
       "github": "https://github.com/Aslam554/blog-website-aslamcoding",
       "website": "https://drive.google.com/file/d/1IZrX-xrp_XPS_yIeDZJmh180Zyg2GI9D/view?usp=sharing",
       "category": "Web App"
-    },
-    {
-      "id": 5,
-      "pic": "storybot.png",
-      "title": "StoryBot AI Chatbot Website",
-      "desc": "An AI chatbot that writes creative stories and poems in Hindi and English.",
-      "github": "https://github.com/Aslam554/storybot_genai",
-      "website": "https://youtube.com/shorts/h3XJgOrTmYo?si=wPRogpz7YVj-pRag",
-      "category": "AI"
-    },
-    {
-      "id": 6,
-      "pic": "tubus.png",
-      "title": "Tezpur University Bus Booking",
-      "desc": "Booking and complaint system with ticket PDF download support.",
-      "github": "https://github.com/Aslam554/Frontend-Bus-UI-React-Ts",
-      "website": "https://tubusservices.netlify.app/",
-      "category": "Web App"
-    },
-    {
-      "id": 7,
-      "pic": "tuhealth.png",
-      "title": "TU Health Care Website",
-      "desc": "Healthcare booking platform with mental health awareness resources.",
-      "github": "https://github.com/Aslam554/mentalhealth/tree/main/TUCareHealth",
-      "website": "https://tuhealthcentres.netlify.app/",
-      "category": "Full Stack"
-    },
-    {
-      "id": 8,
-      "pic": "tufood.png",
-      "title": "Aslam Eats Food Website",
-      "desc": "Frontend for a food delivery app with animated smooth UI.",
-      "github": "https://github.com/Aslam554/FrontendFronzy_Mirza_Aslam_Beg",
-      "website": "https://frontendfrenzyaslambeg.netlify.app/",
-      "category": "Frontend"
-    },
-    {
-      "id": 9,
-      "pic": "piano.png",
-      "title": "Piano Musical Website",
-      "desc": "A fun piano-playing website with Sa Re Ga Ma interface.",
-      "github": "https://github.com/Aslam554/Piano-App",
-      "website": "https://pianomusicsite.netlify.app/",
-      "category": "Frontend"
-    },
-    {
-      "id": 10,
-      "pic": "tts.png",
-      "title": "Aslam Text to Speech Website",
-      "desc": "Text-to-speech conversion app for converting typed text to audio.",
-      "github": "https://github.com/Aslam554/Tts",
-      "website": "https://aslamtexttospeech.netlify.app/",
-      "category": "AI"
-    },
-    {
-      "id": 11,
-      "pic": "tableread.png",
-      "title": "Maths Table Reader & Writer",
-      "desc": "Reads and writes multiplication tables for any number using speech.",
-      "github": "https://github.com/Aslam554/Maths-Table-Reading-App",
-      "website": "https://mathtablereader.netlify.app/",
-      "category": "Frontend"
     }
   ]
 }
