@@ -36,27 +36,15 @@ body {
     @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden;
 }
 
-/* Modern Light Gray Scrollbar */
+/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-    width: 6px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #4d4d4d;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #666;
-}
-
+/* Hide scrollbar for IE, Edge and Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: #4d4d4d #000;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 @layer utilities {

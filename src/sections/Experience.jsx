@@ -1,114 +1,140 @@
-import React, { useEffect, useState } from 'react';
-import { FaLaptopCode } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { FaLaptopCode, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Experience = () => {
-  const [textGradient, setTextGradient] = useState('text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500');
-
-  useEffect(() => {
-    const current = localStorage.getItem('theme') || 'cyan-teal';
-    const gradients = {
-      'cyan-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-red-400',
-      'blue-purple': 'text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500',
-      'red-orange': 'text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500',
-      'green-teal': 'text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-500',
-    };
-    setTextGradient(gradients[current] || gradients['cyan-teal']);
-  }, []);
-
   const experiences = [
+    {
+      icon: <FaLaptopCode className="text-xl" />,
+      title: "Full Stack Developer",
+      company: "ArabicO (Freelance)",
+      url: "https://www.arabico.online",
+      duration: "Dec 2025 - Feb 2026 · Saudi Arabia (Remote)",
+      keyImpact: "Built a complete learning platform from scratch — now serving 100+ active students",
+      points: [
+        "Built a complete Arabic learning platform from scratch — now serving 100+ active students",
+        "Designed scalable architecture to handle live classes + user management seamlessly",
+        "Automated lead flow & booking system → reduced manual work significantly",
+        "Integrated email automation + Excel-based CRM for streamlined operations",
+        "Delivered premium UI/UX tailored for high-conversion learning experience"
+      ],
+      skills: ["React.js", "Node.js", "Email Integration", "Excel Automation", "UI/UX Design"]
+    },
     {
       icon: <FaLaptopCode className="text-xl" />,
       title: "Frontend Developer Intern",
       company: "SWE180",
+      url: "https://www.swe180.com",
       duration: "May 2025 - June 2025 · Remote",
-      description: "Worked on the frontend of the SWE180 project, implementing reusable UI components and page flows using React and Tailwind.",
+      keyImpact: "Improved performance by 40% | Reduced dev time by 25%",
+      points: [
+        "Improved website responsiveness by 40% using optimized React + Tailwind architecture",
+        "Built structured UI for core CS subjects (OS, CN, DBMS, DSA)",
+        "Increased user engagement by 30% with interactive quiz system",
+        "Reduced dev time by 25% via reusable component architecture"
+      ],
       skills: ["React.js", "Tailwind CSS", "Responsive UI", "Component Design"]
     },
     {
       icon: <FaLaptopCode className="text-xl" />,
-      title: "Frontend Developer Intern",
-      company: "Nemi Wealth",
-      duration: "Feb 2025 - Present · Mumbai, Maharashtra",
-      description: "Building the website for a fintech startup. Responsible for frontend architecture and dynamic dashboard components.",
-      skills: ["React.js", "Tailwind CSS", "React Chart.js", "Fintech UI"]
-    },
-    {
-      icon: <FaLaptopCode className="text-xl" />,
-      title: "Software Developer Intern",
-      company: "ChatterPy",
-      duration: "Jan 2025 - March 2025 · Chennai, Tamil Nadu",
-      description: "Developed full-stack features using React.js for frontend and Flask for backend on the ChatterPy AI platform.",
-      skills: ["React.js", "Flask", "Full-Stack", "API Integration"]
+      title: "Backend Developer Intern",
+      company: "Bael Tea",
+      duration: "Dec 2024 - Jan 2025 · Tezpur, Assam",
+      keyImpact: "Reduced latency by 20% | Built scalable MERN architecture",
+      points: [
+        "Built scalable MERN backend with role-based architecture (Admin + Client)",
+        "Developed complaint management + order tracking system",
+        "Implemented real-time analytics dashboards for business insights",
+        "Reduced API response time by 20% using optimized REST APIs + JWT auth"
+      ],
+      skills: ["Node.js", "Express.js", "MongoDB", "JWT", "MERN Stack", "Dashboard Analytics"]
     },
   ];
 
   return (
-    <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <motion.h2
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className={`text-4xl md:text-5xl font-extrabold tracking-tight ${textGradient}`}
-        >
-          My Experience
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto"
-        >
-          Startups, internships & projects that shaped my dev journey.
-        </motion.p>
+    <section id="experience" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="text-left mb-16 border-l-4 border-brand-cyan pl-6">
+        <p className="text-brand-cyan font-bold tracking-widest text-xs mb-2 uppercase">Work Experience</p>
+        <h2 className="text-3xl md:text-4xl font-black mb-2">
+          Real Impact. <span className="text-brand-gradient">Real Results.</span>
+        </h2>
+        <p className="text-gray-400 text-xs italic">Building products that solve real problems.</p>
       </div>
 
       <div className="relative pl-8 sm:pl-12">
-        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-rose-400 to-pink-500 opacity-20"></div>
+        <div className="absolute left-0 top-0 h-full w-1 bg-brand-cyan/20"></div>
 
         {experiences.map((exp, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2 }}
-            className="relative mb-12 pl-8 sm:pl-12"
+            className="relative mb-8 pl-8 sm:pl-12"
           >
-            <div className="absolute left-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-rose-400 to-pink-500 shadow-md"></div>
+            {/* Minimal Timeline Dot */}
+            <div className="absolute left-0 top-7 transform -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-brand-cyan shadow-[0_0_10px_#00e0ff]"></div>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-rose-400 transition-all duration-300 backdrop-blur-sm group"
-            >
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center rounded-lg bg-gradient-to-r from-rose-400 to-pink-500 bg-opacity-10 group-hover:bg-opacity-20 transition-all">
-                  <span className="text-rose-300">{exp.icon}</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1">
-                    <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                    <span className="text-sm text-gray-400">{exp.duration}</span>
+            {/* Clean Experience Card */}
+            <div className="bg-[#0a0a0a] p-5 md:p-6 rounded-2xl border border-white/5 backdrop-blur-sm">
+              <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8">
+                {/* Left Side: Meta & Icon */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-brand-cyan/5 border border-brand-cyan/10">
+                      <span className="text-brand-cyan text-xl">{exp.icon}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-black text-white tracking-tight">{exp.title}</h3>
+                      <span className="text-[10px] font-bold text-gray-500 bg-white/5 px-2 py-0.5 rounded-full inline-block mt-1">{exp.duration}</span>
+                    </div>
                   </div>
-                  <h4 className={`text-lg font-semibold mb-3 ${textGradient}`}>{exp.company}</h4>
-                  <p className="text-gray-400 mb-4">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
+
+                  <div className="flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-brand-gradient uppercase tracking-widest">
+                      {exp.company}
+                    </h4>
+                    {exp.url && (
+                      <a 
+                        href={exp.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-brand-cyan hover:text-white transition-colors"
+                      >
+                        <FaExternalLinkAlt className="text-[9px]" />
+                      </a>
+                    )}
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 pt-2">
                     {exp.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gray-700 text-rose-300 hover:bg-rose-600/20 transition"
+                        className="px-2.5 py-1 text-[8px] font-bold uppercase rounded-full bg-white/5 text-gray-500 border border-white/5 hover:border-brand-cyan/20 transition-all cursor-default"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
                 </div>
+
+                {/* Right Side: Impact & Bullets */}
+                <div className="space-y-4 lg:border-l lg:border-white/5 lg:pl-8">
+                  {/* Impact Highlight */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-brand-cyan/5 border border-brand-cyan/10 rounded-lg w-full lg:w-auto">
+                    <span className="text-[10px] font-bold text-brand-cyan tracking-wide uppercase">
+                      Key Impact: <span className="text-gray-300 ml-1 normal-case font-medium">{exp.keyImpact}</span>
+                    </span>
+                  </div>
+
+                  <ul className="space-y-2.5 list-none">
+                    {exp.points.map((point, i) => (
+                      <li key={i} className="text-gray-400 text-sm leading-relaxed flex items-start gap-3">
+                        <span className="text-brand-cyan mt-2 w-1.5 h-1.5 rounded-full bg-brand-cyan/40"></span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         ))}
       </div>
     </section>

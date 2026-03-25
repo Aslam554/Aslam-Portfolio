@@ -1,38 +1,28 @@
-import { FaGithub, FaLinkedin, FaYoutube, FaCode } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 export default function Social() {
+  const socials = [
+    { icon: <FaGithub />, url: "https://github.com/Aslam554", color: "hover:text-white" },
+    { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/mirza-aslam-beg-8347661ab/", color: "hover:text-blue-400" },
+    { icon: <FaTwitter />, url: "https://twitter.com/aslambeg", color: "hover:text-sky-400" },
+    { icon: <FaYoutube />, url: "https://www.youtube.com/@aslamcoding", color: "hover:text-red-500" },
+    { icon: <SiLeetcode />, url: "https://leetcode.com/u/aslambeg/", color: "hover:text-yellow-500" },
+  ];
+
   return (
-    <div className="flex h-12 w-96 space-x-4">
-      <div className="w-1/6 flex justify-center">
-        <a href="https://github.com/Aslam554" target="_blank" rel="noopener noreferrer">
-          <FaGithub className="h-12 w-12 text-gray-300 hover:text-gray-600" />
+    <div className="flex items-center gap-4 mt-2">
+      {socials.map((social, index) => (
+        <a
+          key={index}
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-2xl text-gray-400 transition-all duration-300 transform hover:-translate-y-1 ${social.color}`}
+        >
+          {social.icon}
         </a>
-      </div>
-      <div className="w-1/6 flex justify-center">
-        <a href="https://www.linkedin.com/in/mirza-aslam-beg-8347661ab/" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin className="h-12 w-12 text-blue-700 hover:text-blue-500" />
-        </a>
-      </div>
-      <div className="w-1/6 flex justify-center">
-        <a href="https://www.youtube.com/@aslamcoding" target="_blank" rel="noopener noreferrer">
-          <FaYoutube className="h-12 w-12 text-red-600 hover:text-red-400" />
-        </a>
-      </div>
-      <div className="w-1/6 flex justify-center">
-        <a href="https://codeforces.com/profile/Aslam97" target="_blank" rel="noopener noreferrer">
-          <img src="sociallogo/codeforces.png" alt="Codeofrces" width={100} className="h-12"/>
-        </a>
-      </div>
-      <div className="w-1/6 flex justify-center">
-        <a href="https://www.codechef.com/users/aslambeg97" target="_blank" rel="noopener noreferrer">
-          <img src="sociallogo/codechef.png" alt="Codechef" className="h-12"/>
-        </a>
-      </div>
-      <div className="w-1/6 flex justify-center ">
-        <a href="https://leetcode.com/u/aslambeg/" target="_blank" rel="noopener noreferrer">
-          <img src="sociallogo/leetcode.webp" alt="LeetCode" className="h-12"/>
-        </a>
-      </div>
+      ))}
     </div>
   );
 }
