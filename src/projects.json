@@ -2,6 +2,15 @@
   "projects": [
     {
       "id": 1,
+      "title": "Aslam Blog Platform",
+      "pic": "blogsite.png",
+      "desc": "Blog platform with admin/user panels, full CRUD, and YouTube data integration for developers and tech writers.",
+      "github": "https://github.com/Aslam554/blog-website-aslamcoding",
+      "website": "https://aslamcodeblog.vercel.app/",
+      "category": "Web App"
+    },
+    {
+      "id": 2,
       "title": "Learn With Aslam",
       "pic": "learnwithaslam.png",
       "desc": "An EdTech platform empowering 100+ students to master coding and personal branding. Leveraging a 3.5M+ LinkedIn reach for maximum student impact.",
@@ -10,7 +19,7 @@
       "category": "Full Stack"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "ArabicO - EdTech Saudi Arabia",
       "pic": "arabico.png",
       "desc": "Built a complete Arabic learning platform from scratch — serving 100+ students. Automated lead flow & automated booking systems.",
@@ -18,8 +27,9 @@
       "website": "https://www.arabico.online",
       "category": "Full Stack"
     },
+  
     {
-      "id": 3,
+      "id": 4,
       "title": "Aslam StoreN",
       "pic": "aslamstore.png",
       "desc": "An E-commerce website with Stripe integration, cart system, admin & user panels, and featured products management.",
@@ -28,7 +38,7 @@
       "category": "Full Stack"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Postgres Store",
       "pic": "postgrsstore.png",
       "desc": "A store management system with smooth UI using PostgreSQL for full CRUD operations and efficient data retrieval.",
@@ -37,22 +47,14 @@
       "category": "Full Stack"
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Rich Text Editor (AI Powered)",
       "pic": "richtext.png",
       "desc": "A smart editor with Gemini AI integration. Features contextual content suggestions, full file management, and minimalist UI.",
       "github": "https://github.com/Aslam554/Rich-Text-Editor",
       "website": "https://richtexteditors.netlify.app/",
       "category": "AI"
-    },
-    {
-      "id": 6,
-      "title": "Aslam Blog Platform",
-      "pic": "blogsite.png",
-      "desc": "Blog platform with admin/user panels, full CRUD, and YouTube data integration for developers and tech writers.",
-      "github": "https://github.com/Aslam554/blog-website-aslamcoding",
-      "website": "https://drive.google.com/file/d/1IZrX-xrp_XPS_yIeDZJmh180Zyg2GI9D/view?usp=sharing",
-      "category": "Web App"
     }
+    
   ]
 }
