@@ -22,14 +22,12 @@ export default function ContactMe() {
       setVisitorCount(parseInt(saved, 10));
     }
 
-    // Direct real-time fetch fallback for footer
-    fetch("https://api.counterapi.dev/v1/aslambeg-portfolio-2026/views")
+    fetch("/api/views")
       .then((res) => res.json())
       .then((data) => {
-        if (data && typeof data.count === "number") {
-          const totalViews = 24185 + data.count;
-          setVisitorCount(totalViews);
-          localStorage.setItem("aslam_total_views", totalViews.toString());
+        if (data && typeof data.views === "number") {
+          setVisitorCount(data.views);
+          localStorage.setItem("aslam_total_views", data.views.toString());
         }
       })
       .catch(() => {});

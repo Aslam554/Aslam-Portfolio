@@ -32,22 +32,21 @@ export default function Hero() {
 
     const visited = sessionStorage.getItem("aslam_visited_session");
     const endpoint = visited
-      ? "https://api.counterapi.dev/v1/aslambeg-portfolio-2026/views"
-      : "https://api.counterapi.dev/v1/aslambeg-portfolio-2026/views/up";
+      ? "/api/views"
+      : "/api/views?increment=true";
 
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
-        if (data && typeof data.count === "number") {
+        if (data && typeof data.views === "number") {
           sessionStorage.setItem("aslam_visited_session", "true");
-          const totalViews = 24185 + data.count;
-          setVisitorCount(totalViews);
-          localStorage.setItem("aslam_total_views", totalViews.toString());
-          window.dispatchEvent(new CustomEvent("visitorUpdate", { detail: totalViews }));
+          setVisitorCount(data.views);
+          localStorage.setItem("aslam_total_views", data.views.toString());
+          window.dispatchEvent(new CustomEvent("visitorUpdate", { detail: data.views }));
         }
       })
       .catch((err) => {
-        console.error("Counter API error:", err);
+        console.error("Counter fetch error:", err);
       });
   }, []);
 
