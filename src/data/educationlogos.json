@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": 1,
+      "name": "SoE, Tezpur University, Nappam, Tezpur, Assam",
+      "logo": "tu.png",
+      "branch": "B.Tech Electronics and Communication Engineering",
+      "year": "2024–2028",
+      "grade": "7.61 CGPA"
+    },
+    {
+      "id": 2,
+      "name": "Crescent Convent School, Dildarnagar",
+      "logo": "cres.jpg",
+      "branch": "CBSE 12th — Mathematics & Science",
+      "year": "2024",
+      "grade": "84.66 %"
+    },
+    {
+      "id": 3,
+      "name": "St. Mary's School, Zamania",
+      "logo": "stmr.jpg",
+      "branch": "CISCE 10th — Science & Mathematics",
+      "year": "2022",
+      "grade": "97.33 %"
+    }
+  ]
+}
