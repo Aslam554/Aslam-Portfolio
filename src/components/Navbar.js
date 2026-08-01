@@ -52,51 +52,52 @@ const Navbar = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-3 transition-all duration-300 ${
-      scrolled
-        ? "bg-white/85 dark:bg-[#08080a]/85 backdrop-blur-xl shadow-xs"
-        : "bg-white/60 dark:bg-[#08080a]/60 backdrop-blur-md"
-    }`}>
-      <div className="max-w-5xl mx-auto flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-3.5 pointer-events-none transition-all duration-300">
+      <div className="max-w-3xl mx-auto flex items-center justify-center pointer-events-auto">
         
-        {/* Left Spacer for perfect center balancing on desktop */}
-        <div className="hidden md:block w-28" />
+        {/* Unified Sleek Floating Glass Pill Container */}
+        <div className={`flex items-center gap-1.5 sm:gap-2 rounded-full px-3 py-1.5 transition-all duration-300 border ${
+          scrolled
+            ? "bg-white/90 dark:bg-[#0c0d11]/90 backdrop-blur-xl border-zinc-200/80 dark:border-zinc-800/80 shadow-md"
+            : "bg-white/70 dark:bg-[#0c0d11]/70 backdrop-blur-md border-zinc-200/50 dark:border-zinc-800/50 shadow-xs"
+        }`}>
+          
+          {/* Desktop Nav Items */}
+          <nav className="hidden md:flex items-center gap-0.5">
+            {navItems.map((item) => {
+              const isActive = active === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all duration-200 cursor-pointer ${
+                    isActive
+                      ? "text-zinc-950 dark:text-white bg-zinc-200/90 dark:bg-zinc-800 shadow-xs font-bold"
+                      : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/40"
+                  }`}
+                >
+                  {item.name}
+                </button>
+              );
+            })}
+          </nav>
 
-        {/* Center Nav Items Pill */}
-        <nav className="hidden md:flex items-center gap-0.5 glass-card rounded-full px-2 py-1 shadow-xs border border-zinc-200/60 dark:border-zinc-800/80 bg-white/70 dark:bg-[#0d0e12]/70 backdrop-blur-md">
-          {navItems.map((item) => {
-            const isActive = active === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-sans font-medium transition-all duration-200 cursor-pointer ${
-                  isActive
-                    ? "text-zinc-950 dark:text-white bg-zinc-200/90 dark:bg-zinc-800 shadow-xs font-bold"
-                    : "text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100/50 dark:hover:bg-zinc-800/40"
-                }`}
-              >
-                {item.name}
-              </button>
-            );
-          })}
-        </nav>
+          {/* Divider between Nav Items and Right Controls on Desktop */}
+          <div className="hidden md:block h-4 w-px bg-zinc-200 dark:bg-zinc-800 mx-1" />
 
-        {/* Right Actions */}
-        <div className="flex items-center gap-2.5 ml-auto md:ml-0">
-          {/* Contact Me Mini Badge */}
+          {/* Contact Button */}
           <button
             onClick={() => scrollToSection("contact-me")}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 hover:border-indigo-500/50 dark:hover:border-indigo-400/50 bg-white/80 dark:bg-zinc-900/80 text-xs font-sans font-medium rounded-full shadow-xs hover:shadow-sm active:scale-95 transition-all duration-200 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-zinc-700 dark:text-zinc-300 hover:text-indigo-600 dark:hover:text-indigo-400 text-xs font-sans font-medium rounded-full transition-colors cursor-pointer"
           >
             <Send size={12} className="text-indigo-500" />
-            Contact
+            <span>Contact</span>
           </button>
 
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full cursor-pointer transition-all duration-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 text-zinc-600 dark:text-zinc-300 border border-zinc-200/80 dark:border-zinc-800/80 active:scale-90 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md"
+            className="p-1.5 rounded-full cursor-pointer transition-all duration-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 text-zinc-600 dark:text-zinc-300 active:scale-90"
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
@@ -109,17 +110,18 @@ const Navbar = ({ theme, toggleTheme }) => {
           {/* Mobile Hamburger toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors cursor-pointer bg-white/80 dark:bg-zinc-900/80"
+            className="md:hidden p-1.5 rounded-full text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors cursor-pointer"
             aria-label="Toggle Menu"
           >
             {menuOpen ? <X size={16} /> : <Menu size={16} />}
           </button>
+
         </div>
       </div>
 
       {/* Mobile Nav Dropdown */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-4 right-4 mt-2 p-4 bg-white/95 dark:bg-[#0c0d11]/95 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col gap-2 font-sans text-xs animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden pointer-events-auto max-w-sm mx-auto mt-2 p-4 bg-white/95 dark:bg-[#0c0d11]/95 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-2xl backdrop-blur-xl flex flex-col gap-2 font-sans text-xs animate-in fade-in slide-in-from-top-2 duration-200">
           {navItems.map((item) => (
             <button
               key={item.id}
