@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-mesh-pattern bg-[#fcfcfd] text-zinc-900 dark:bg-[#08080a] dark:text-zinc-50 transition-colors duration-300 relative overflow-hidden">
+    <div className="w-full min-h-screen bg-mesh-pattern bg-[#fcfcfd] text-zinc-900 dark:bg-[#08080a] dark:text-zinc-50 transition-colors duration-300 relative">
       
       {/* Background Ambient Orbs */}
       <div className="fixed top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-indigo-500/10 dark:bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />

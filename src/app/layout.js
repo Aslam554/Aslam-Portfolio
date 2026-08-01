@@ -24,7 +24,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Mirza Aslam Beg — Software Engineer & Full Stack Developer",
-  description: "Software Engineer specializing in building high-performance, scalable web applications. 5x Intern, 1000+ LeetCode Solved.",
+  description: "Software Engineer specializing in building high-performance, scalable web applications.",
   keywords: [
     "Mirza Aslam Beg",
     "Software Engineer",
@@ -50,9 +50,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${jetbrainsMono.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} ${jetbrainsMono.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col selection:bg-indigo-500/20 selection:text-indigo-400">
+      <body className="min-h-screen flex flex-col selection:bg-indigo-500/20 selection:text-indigo-400">
         {children}
       </body>
     </html>
