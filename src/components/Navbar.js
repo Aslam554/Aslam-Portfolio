@@ -14,20 +14,11 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
     { name: "Achievements", id: "achievements" },
-    { name: "Contact", id: "contact-me" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      
-      // Check if user has scrolled near bottom of page
-      const scrollHeight = document.documentElement.scrollHeight;
-      const currentBottom = window.innerHeight + Math.ceil(window.scrollY);
-      if (currentBottom >= scrollHeight - 200) {
-        setActive("contact-me");
-        return;
-      }
 
       const sections = navItems.map((item) => document.getElementById(item.id)).filter(Boolean);
       const scrollPosition = window.scrollY + 180;
@@ -68,17 +59,15 @@ const Navbar = ({ theme, toggleTheme }) => {
     }`}>
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         
-        {/* Left Branding */}
+        {/* Left Branding (Icon logo) */}
         <div
           className="group cursor-pointer select-none flex items-center gap-2"
           onClick={() => scrollToSection("hero")}
+          title="Home"
         >
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-mono font-bold text-xs shadow-sm group-hover:scale-105 transition-transform">
             M
           </div>
-          <span className="font-sans font-bold text-sm tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-            Mirza Aslam Beg
-          </span>
         </div>
 
         {/* Center Nav Items Pill */}
