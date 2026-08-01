@@ -54,21 +54,13 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-3 transition-all duration-300 ${
       scrolled
-        ? "bg-white/85 dark:bg-[#08080a]/85 backdrop-blur-xl border-b border-zinc-200/60 dark:border-zinc-850/60 shadow-xs"
+        ? "bg-white/85 dark:bg-[#08080a]/85 backdrop-blur-xl shadow-xs"
         : "bg-white/60 dark:bg-[#08080a]/60 backdrop-blur-md"
     }`}>
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         
-        {/* Left Branding (Icon logo) */}
-        <div
-          className="group cursor-pointer select-none flex items-center gap-2"
-          onClick={() => scrollToSection("hero")}
-          title="Home"
-        >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-mono font-bold text-xs shadow-sm group-hover:scale-105 transition-transform">
-            M
-          </div>
-        </div>
+        {/* Left Spacer for perfect center balancing on desktop */}
+        <div className="hidden md:block w-28" />
 
         {/* Center Nav Items Pill */}
         <nav className="hidden md:flex items-center gap-0.5 glass-card rounded-full px-2 py-1 shadow-xs border border-zinc-200/60 dark:border-zinc-800/80 bg-white/70 dark:bg-[#0d0e12]/70 backdrop-blur-md">
@@ -91,7 +83,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2.5 ml-auto md:ml-0">
           {/* Contact Me Mini Badge */}
           <button
             onClick={() => scrollToSection("contact-me")}
