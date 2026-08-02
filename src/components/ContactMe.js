@@ -241,7 +241,7 @@ export default function ContactMe() {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-sans text-xs font-bold rounded-xl active:scale-98 transition-all duration-200 cursor-pointer shadow-md"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-sans text-xs font-bold rounded-xl active:scale-98 transition-all duration-200 cursor-pointer shadow-md"
             >
               Send Message <FaPaperPlane size={10} />
             </button>

@@ -40,7 +40,6 @@ export default function ProjectBox({ pic, title, desc, github, website, category
             e.target.src = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80";
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/20 dark:from-[#0c0d11]/80 via-transparent to-transparent opacity-80 pointer-events-none"></div>
       </a>
 
       {/* Card Content & Action Buttons */}
@@ -79,7 +78,7 @@ export default function ProjectBox({ pic, title, desc, github, website, category
               href={website}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-[10px] uppercase font-bold tracking-wider text-center active:scale-95 transition-all duration-200 shadow-sm"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] uppercase font-bold tracking-wider text-center active:scale-95 transition-all duration-200 shadow-sm"
             >
               <FaExternalLinkAlt className="text-[9px]" /> Live Demo
             </a>

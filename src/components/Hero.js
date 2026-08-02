@@ -73,7 +73,7 @@ export default function Hero() {
         
         {/* Row 1: Profile photo & Name Header */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-          <div className="relative w-22 h-22 shrink-0 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-md">
+          <div className="relative w-22 h-22 shrink-0 rounded-2xl overflow-hidden p-0.5 bg-indigo-600 dark:bg-indigo-500 shadow-md">
             <div className="w-full h-full rounded-[14px] overflow-hidden bg-zinc-100 dark:bg-zinc-900">
               <img
                 src="/mirza-aslam-beg.jpeg"
@@ -135,7 +135,7 @@ export default function Hero() {
           {/* Open To Work CTA */}
           <button
             onClick={() => scrollToSection("contact-me")}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-mono text-xs font-semibold rounded-xl transition-all duration-200 cursor-pointer shadow-md hover:shadow-indigo-500/20 active:scale-98"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-semibold rounded-xl transition-all duration-200 cursor-pointer shadow-md hover:shadow-indigo-500/20 active:scale-98"
           >
             <FaEnvelope className="text-xs" />
             Hire Me

@@ -16,7 +16,7 @@ const Achievements = () => {
       description: "Sharing tech thoughts, full-stack web engineering insights, and daily developer updates.", 
       category: "Social & Tech",
       url: "https://x.com/aslambeg84",
-      accentBg: "from-zinc-500/10 via-transparent to-transparent",
+      accentBg: "bg-zinc-500/5",
       accentBorder: "hover:border-zinc-400 dark:hover:border-zinc-500",
       badgeColor: "bg-zinc-100 dark:bg-zinc-800/80 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700"
     },
@@ -30,7 +30,7 @@ const Achievements = () => {
       description: "Sharing insights on web engineering, system design, modern JS frameworks & career growth.", 
       category: "Professional",
       url: "https://www.linkedin.com/in/mirza-aslam-beg-8347661ab/",
-      accentBg: "from-blue-500/10 via-transparent to-transparent",
+      accentBg: "bg-blue-500/5",
       accentBorder: "hover:border-blue-500/50 dark:hover:border-blue-400/50",
       badgeColor: "bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 border-blue-500/20"
     },
@@ -44,7 +44,7 @@ const Achievements = () => {
       description: "Mentoring student coders on data structures, web development, projects & internships.", 
       category: "Mentorship",
       url: "https://www.youtube.com/@aslamcoding",
-      accentBg: "from-red-500/10 via-transparent to-transparent",
+      accentBg: "bg-red-500/5",
       accentBorder: "hover:border-red-500/50 dark:hover:border-red-400/50",
       badgeColor: "bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 border-red-500/20"
     }
@@ -77,8 +77,8 @@ const Achievements = () => {
               rel="noopener noreferrer"
               className={`group relative p-5 rounded-2xl border border-zinc-200/80 dark:border-zinc-850/70 bg-white/90 dark:bg-[#0c0d11]/90 ${item.accentBorder} transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between overflow-hidden cursor-pointer`}
             >
-              {/* Top Accent Gradient Glow */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.accentBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+              {/* Top Accent Hover Overlay */}
+              <div className={`absolute inset-0 ${item.accentBg} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
               <div className="relative z-10 space-y-3">
                 {/* Header Row */}

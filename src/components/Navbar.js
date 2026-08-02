@@ -138,7 +138,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-1"></div>
           <button
             onClick={() => scrollToSection("contact-me")}
-            className="w-full py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl text-center shadow-md active:scale-98 transition-transform cursor-pointer"
+            className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl text-center shadow-md active:scale-98 transition-transform cursor-pointer"
           >
             Get In Touch
           </button>
