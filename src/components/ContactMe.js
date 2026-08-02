@@ -9,7 +9,7 @@ export default function ContactMe() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
   const [copied, setCopied] = useState(false);
-  const [visitorCount, setVisitorCount] = useState(24185);
+  const [visitorCount, setVisitorCount] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   const emailAddress = "begaslam405@gmail.com";
@@ -267,7 +267,7 @@ export default function ContactMe() {
           <FaUsers className="text-xs text-indigo-500" />
           <span>Views:</span>
           <span className="font-bold text-zinc-900 dark:text-zinc-100">
-            {mounted ? visitorCount.toLocaleString() : "24,185"}
+            {mounted ? visitorCount.toLocaleString() : "0"}
           </span>
         </div>
       </footer>

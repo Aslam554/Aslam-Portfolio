@@ -19,7 +19,7 @@ const TechTag = ({ name, label, color = "#fff", logoBg }) => {
 };
 
 export default function Hero() {
-  const [visitorCount, setVisitorCount] = useState(24185);
+  const [visitorCount, setVisitorCount] = useState(0);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

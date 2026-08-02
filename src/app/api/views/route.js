@@ -18,12 +18,12 @@ export async function GET(request) {
 
     if (!res.ok) {
       // Fallback response if external API is unreachable
-      return NextResponse.json({ views: 24185 }, { status: 200 });
+      return NextResponse.json({ views: 0 }, { status: 200 });
     }
 
     const data = await res.json();
     const count = typeof data.count === "number" ? data.count : 1;
-    const totalViews = 24185 + count;
+    const totalViews = count;
 
     return NextResponse.json(
       { views: totalViews },
@@ -37,6 +37,6 @@ export async function GET(request) {
     );
   } catch (error) {
     console.error("Server API views fetch error:", error);
-    return NextResponse.json({ views: 24185 }, { status: 200 });
+    return NextResponse.json({ views: 0 }, { status: 200 });
   }
 }
