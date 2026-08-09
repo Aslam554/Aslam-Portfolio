@@ -25,7 +25,7 @@ export default function ContactMe() {
     fetch("/api/views")
       .then((res) => res.json())
       .then((data) => {
-        if (data && typeof data.views === "number") {
+        if (data && typeof data.views === "number" && data.views > 0) {
           setVisitorCount(data.views);
           localStorage.setItem("aslam_total_views", data.views.toString());
         }

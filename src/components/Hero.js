@@ -38,7 +38,7 @@ export default function Hero() {
     fetch(endpoint)
       .then((res) => res.json())
       .then((data) => {
-        if (data && typeof data.views === "number") {
+        if (data && typeof data.views === "number" && data.views > 0) {
           sessionStorage.setItem("aslam_visited_session", "true");
           setVisitorCount(data.views);
           localStorage.setItem("aslam_total_views", data.views.toString());

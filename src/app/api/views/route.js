@@ -3,10 +3,9 @@ import { NextResponse } from "next/server";
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const shouldIncrement = searchParams.get("increment") === "true";
+  const action = shouldIncrement ? "hit" : "get";
 
-  const targetUrl = shouldIncrement
-    ? "https://api.counterapi.dev/v1/aslambeg-portfolio-2026/views/up"
-    : "https://api.counterapi.dev/v1/aslambeg-portfolio-2026/views";
+  const targetUrl = `https://countapi.mileshilliard.com/api/v1/${action}/aslambeg-portfolio-2026`;
 
   try {
     const res = await fetch(targetUrl, {
@@ -17,16 +16,19 @@ export async function GET(request) {
     });
 
     if (!res.ok) {
-      // Fallback response if external API is unreachable
       return NextResponse.json({ views: 0 }, { status: 200 });
     }
 
     const data = await res.json();
-    const count = typeof data.count === "number" ? data.count : 1;
-    const totalViews = count;
+    const count =
+      typeof data.value === "number"
+        ? data.value
+        : typeof data.count === "number"
+        ? data.count
+        : 0;
 
     return NextResponse.json(
-      { views: totalViews },
+      { views: count },
       {
         status: 200,
         headers: {
@@ -40,3 +42,4 @@ export async function GET(request) {
     return NextResponse.json({ views: 0 }, { status: 200 });
   }
 }
+
