@@ -123,7 +123,7 @@ export default function Hero() {
         <div className="flex flex-wrap items-center gap-3 pt-2">
           {/* Resume CTA */}
           <a
-            href="https://drive.google.com/file/d/1u_DyQsGQfL4clbzhCBxY0EVnVSI3hr_9/view?usp=sharing"
+            href="https://drive.google.com/file/d/1-hBUcEwfdoh5niGQRc0YhM_0kw5XVdGK/view?usp=drivesdk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-500/50 dark:hover:border-indigo-400/50 bg-white dark:bg-[#0e0f14] hover:bg-zinc-50 dark:hover:bg-zinc-800/80 text-zinc-900 dark:text-zinc-100 font-mono text-xs font-semibold rounded-xl transition-all duration-200 cursor-pointer shadow-xs hover:shadow-sm"
