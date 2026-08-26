@@ -151,3 +151,34 @@ body {
 .text-gradient-accent {
   color: #6366f1;
 }
+
+/* GitHub Calendar Dark Mode & Tooltip Enhancements */
+.react-activity-calendar {
+  color: #71717a !important;
+}
+
+.dark .react-activity-calendar {
+  color: #a1a1aa !important;
+}
+
+.dark .react-activity-calendar text {
+  fill: #a1a1aa !important;
+}
+
+.react-activity-calendar__tooltip {
+  background-color: #18181b !important;
+  color: #f4f4f5 !important;
+  font-size: 11px !important;
+  font-family: var(--font-mono) !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+  z-index: 50 !important;
+}
+
+.dark .react-activity-calendar__tooltip {
+  background-color: #18181b !important;
+  color: #f4f4f5 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}

@@ -189,16 +189,16 @@ export default function TeckStack({ theme }) {
               <span className="text-lg font-bold text-zinc-900 dark:text-zinc-100 font-mono">{profileStats.stars}</span>
             </div>
             <div className="p-3.5 bg-white dark:bg-[#0c0d11] border border-zinc-200/80 dark:border-zinc-850/70 rounded-xl shadow-xs flex flex-col justify-between">
-              <span className="block text-[10px] font-mono text-zinc-400 dark:text-zinc-500 uppercase">Select Year</span>
+              <span className="block text-[10px] font-mono text-zinc-400 dark:text-zinc-500 uppercase font-semibold">Select Year</span>
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className="bg-transparent text-zinc-800 dark:text-zinc-200 text-xs rounded focus:outline-none cursor-pointer font-semibold font-sans mt-1"
+                className="bg-zinc-50 dark:bg-[#15171e] text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-800 rounded-lg px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-indigo-500 cursor-pointer font-semibold font-sans mt-1 transition-colors"
               >
-                <option value="last">Last 12 Months</option>
-                <option value="2026">2026</option>
-                <option value="2025">2025</option>
-                <option value="2024">2024</option>
+                <option value="last" className="bg-white dark:bg-[#15171e] text-zinc-900 dark:text-zinc-100">Last 12 Months</option>
+                <option value="2026" className="bg-white dark:bg-[#15171e] text-zinc-900 dark:text-zinc-100">2026</option>
+                <option value="2025" className="bg-white dark:bg-[#15171e] text-zinc-900 dark:text-zinc-100">2025</option>
+                <option value="2024" className="bg-white dark:bg-[#15171e] text-zinc-900 dark:text-zinc-100">2024</option>
               </select>
             </div>
           </div>
@@ -208,12 +208,28 @@ export default function TeckStack({ theme }) {
             <div className="min-w-[680px] text-zinc-500 dark:text-zinc-400 font-sans text-xs">
               <GitHubCalendar
                 username="Aslam554"
-                year={selectedYear === "last" ? undefined : selectedYear}
+                year={selectedYear === "last" ? "last" : Number(selectedYear)}
                 blockSize={11}
                 blockRadius={4}
                 colorScheme={theme === "light" ? "light" : "dark"}
                 theme={calendarTheme}
                 showWeekdayLabels={false}
+                labels={{
+                  totalCount: "{{count}} contributions in {{year}}",
+                }}
+                renderBlock={(block, activity) =>
+                  React.cloneElement(block, {
+                    children: (
+                      <title>{`${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${activity.date}`}</title>
+                    ),
+                  })
+                }
+                tooltips={{
+                  activity: {
+                    text: (activity) =>
+                      `${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${activity.date}`,
+                  },
+                }}
               />
             </div>
           </div>
