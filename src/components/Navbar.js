@@ -14,7 +14,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
     { name: "Activity", id: "github-activity" },
-    { name: "Articles", id: "articles" },
+    { name: "Articles", id: "articles", href: "/articles" },
   ];
 
   useEffect(() => {
@@ -37,8 +37,13 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (item) => {
     setMenuOpen(false);
+    if (typeof item === "object" && item.href) {
+      window.location.href = item.href;
+      return;
+    }
+    const id = typeof item === "string" ? item : item.id;
     if (id === "hero") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       setActive("hero");
@@ -49,6 +54,8 @@ const Navbar = ({ theme, toggleTheme }) => {
       const topOffset = section.offsetTop - 85;
       window.scrollTo({ top: topOffset, behavior: "smooth" });
       setActive(id);
+    } else if (id === "articles") {
+      window.location.href = "/articles";
     }
   };
 
@@ -70,7 +77,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               return (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => scrollToSection(item)}
                   className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "text-zinc-950 dark:text-white bg-zinc-200/90 dark:bg-zinc-800 shadow-xs font-bold"
@@ -126,7 +133,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
+              onClick={() => scrollToSection(item)}
               className={`w-full text-left py-2.5 px-3.5 rounded-xl transition-colors cursor-pointer ${
                 active === item.id
                   ? "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 font-semibold"

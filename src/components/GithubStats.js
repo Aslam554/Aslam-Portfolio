@@ -6,6 +6,7 @@ import { FaGithub, FaCodeBranch, FaStar, FaFolderOpen, FaUsers, FaArrowUpRightFr
 import { SiJavascript, SiTypescript, SiPython, SiReact, SiNextdotjs } from "react-icons/si";
 
 export default function GithubStats({ theme = "dark" }) {
+  const [selectedYear, setSelectedYear] = useState("last");
   const [stats, setStats] = useState({
     publicRepos: 28,
     followers: 12,
@@ -60,10 +61,10 @@ export default function GithubStats({ theme = "dark" }) {
     fetchGithubData();
   }, [username]);
 
-  // Color theme tailored for the portfolio's indigo aesthetic
+  // Classic GitHub Emerald Green palette
   const customTheme = {
-    light: ["#ebedf0", "#e0e7ff", "#a5b4fc", "#6366f1", "#4338ca"],
-    dark: ["#14151c", "#1e1b4b", "#3730a3", "#6366f1", "#818cf8"],
+    light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+    dark: ["#14151c", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
 
   const topLanguages = [
@@ -80,7 +81,7 @@ export default function GithubStats({ theme = "dark" }) {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <span className="text-[10px] font-mono tracking-widest text-indigo-500 uppercase font-semibold block mb-1">
+            <span className="text-[10px] font-mono tracking-widest text-emerald-500 uppercase font-semibold block mb-1">
               OPEN SOURCE & CONTRIBUTIONS
             </span>
             <h2 className="text-2xl font-bold font-sans text-zinc-900 dark:text-white tracking-tight flex items-center gap-2">
@@ -96,7 +97,7 @@ export default function GithubStats({ theme = "dark" }) {
             href={`https://github.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0c0d11] hover:border-indigo-500/50 dark:hover:border-indigo-400/50 text-zinc-800 dark:text-zinc-200 font-mono text-xs font-semibold transition-all duration-200 shadow-xs hover:shadow-sm w-fit"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-[#0c0d11] hover:border-emerald-500/50 dark:hover:border-emerald-400/50 text-zinc-800 dark:text-zinc-200 font-mono text-xs font-semibold transition-all duration-200 shadow-xs hover:shadow-sm w-fit"
           >
             <span>@{username}</span>
             <FaArrowUpRightFromSquare className="text-[10px] text-zinc-400" />
@@ -106,14 +107,14 @@ export default function GithubStats({ theme = "dark" }) {
         {/* Bento Row 1: Live Profile Metric Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { label: "Repositories", value: stats.publicRepos, icon: <FaFolderOpen className="text-indigo-500 text-sm" /> },
+            { label: "Repositories", value: stats.publicRepos, icon: <FaFolderOpen className="text-emerald-500 text-sm" /> },
             { label: "Stars Earned", value: stats.stars, icon: <FaStar className="text-amber-400 text-sm" /> },
             { label: "Forks Created", value: stats.forks, icon: <FaCodeBranch className="text-emerald-500 text-sm" /> },
             { label: "Followers", value: stats.followers, icon: <FaUsers className="text-blue-500 text-sm" /> },
           ].map((card, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-850/70 bg-white/80 dark:bg-[#0c0d11]/80 shadow-xs hover:border-indigo-500/40 dark:hover:border-indigo-400/40 transition-all duration-200 flex flex-col justify-between"
+              className="p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-850/70 bg-white/80 dark:bg-[#0c0d11]/80 shadow-xs hover:border-emerald-500/40 dark:hover:border-emerald-400/40 transition-all duration-200 flex flex-col justify-between"
             >
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-400 font-semibold uppercase tracking-wider">
@@ -134,16 +135,30 @@ export default function GithubStats({ theme = "dark" }) {
 
         {/* Bento Row 2: Contribution Heatmap Card */}
         <div className="p-5 sm:p-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-850/70 bg-white/90 dark:bg-[#0c0d11]/90 shadow-xs space-y-4 overflow-hidden">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2">
-              <FaFire className="text-amber-500 text-sm animate-pulse" />
+              <FaFire className="text-emerald-500 text-sm animate-pulse" />
               <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-100 font-sans">
                 Contribution Calendar
               </h3>
             </div>
-            <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full font-semibold border border-emerald-500/20">
-              Active Commits
-            </span>
+
+            {/* Year Dropdown Selector */}
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 hidden sm:inline">
+                Year:
+              </span>
+              <select
+                value={selectedYear}
+                onChange={(e) => setSelectedYear(e.target.value)}
+                className="bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 rounded-lg px-2.5 py-1 text-xs font-mono font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500 cursor-pointer shadow-xs"
+              >
+                <option value="last">Last 12 Months</option>
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+              </select>
+            </div>
           </div>
 
           {/* GitHub Calendar Container */}
@@ -151,6 +166,7 @@ export default function GithubStats({ theme = "dark" }) {
             <div className="min-w-[650px] flex justify-center py-2">
               <GitHubCalendar
                 username={username}
+                year={selectedYear === "last" ? "last" : Number(selectedYear)}
                 blockSize={11}
                 blockMargin={4}
                 fontSize={12}
