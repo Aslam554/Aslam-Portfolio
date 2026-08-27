@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import TeckStack from "@/components/TeckStack";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import GithubStats from "@/components/GithubStats";
 import Achievement from "@/components/Achievement";
 import ContactMe from "@/components/ContactMe";
 
@@ -48,6 +49,7 @@ export default function Home() {
         <TeckStack theme={theme} />
         <Experience />
         <Projects />
+        <GithubStats theme={theme} />
         <Achievement />
         <ContactMe />
       </main>

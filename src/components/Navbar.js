@@ -13,6 +13,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: "Skills", id: "tech-stack" },
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
+    { name: "Activity", id: "github-activity" },
     { name: "Achievements", id: "achievements" },
   ];
 
