@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { GitHubCalendar } from "react-github-calendar";
-import { FaReact, FaNode, FaGithub, FaGitAlt, FaJava, FaDatabase } from "react-icons/fa";
+import { FaReact, FaNode, FaGithub, FaGitAlt, FaJava, FaDatabase, FaChartLine } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import {
   SiNextdotjs,
@@ -16,7 +16,11 @@ import {
   SiPython,
   SiCplusplus,
   SiMysql,
-  SiPostman
+  SiPostman,
+  SiFastapi,
+  SiFlask,
+  SiNumpy,
+  SiPandas
 } from "react-icons/si";
 
 export default function TeckStack({ theme }) {
@@ -59,7 +63,7 @@ export default function TeckStack({ theme }) {
       .catch(err => console.error("Error fetching repos stars:", err));
   }, []);
 
-  const categories = ["All", "Frontend", "Backend", "Databases & Cloud", "Languages & Tools"];
+  const categories = ["All", "Frontend", "Backend", "Data Science & Python", "Databases & Cloud", "Languages & Tools"];
 
   const skills = [
     { name: "JavaScript", category: "Languages & Tools", icon: <SiJavascript className="text-[#F7DF1E] text-sm" />, color: "#F7DF1E" },
@@ -72,9 +76,15 @@ export default function TeckStack({ theme }) {
     { name: "Next.js", category: "Frontend", icon: <SiNextdotjs className="text-zinc-900 dark:text-white text-sm" />, color: "#888888" },
     { name: "Tailwind CSS", category: "Frontend", icon: <SiTailwindcss className="text-[#38BDF8] text-sm" />, color: "#38BDF8" },
     
+    { name: "FastAPI", category: "Backend", icon: <SiFastapi className="text-[#009688] text-sm" />, color: "#009688" },
+    { name: "Flask", category: "Backend", icon: <SiFlask className="text-zinc-800 dark:text-zinc-200 text-sm" />, color: "#000000" },
     { name: "Node.js", category: "Backend", icon: <FaNode className="text-[#339933] text-base" />, color: "#339933" },
     { name: "Express.js", category: "Backend", icon: <SiExpress className="text-[#828282] text-sm" />, color: "#828282" },
     
+    { name: "NumPy", category: "Data Science & Python", icon: <SiNumpy className="text-[#4D77CF] text-sm" />, color: "#4D77CF" },
+    { name: "Pandas", category: "Data Science & Python", icon: <SiPandas className="text-[#E70488] text-sm" />, color: "#E70488" },
+    { name: "Matplotlib", category: "Data Science & Python", icon: <FaChartLine className="text-[#38BDF8] text-sm" />, color: "#38BDF8" },
+
     { name: "MongoDB", category: "Databases & Cloud", icon: <SiMongodb className="text-[#47A248] text-sm" />, color: "#47A248" },
     { name: "PostgreSQL", category: "Databases & Cloud", icon: <SiPostgresql className="text-[#4169E1] text-sm" />, color: "#4169E1" },
     { name: "MySQL", category: "Databases & Cloud", icon: <SiMysql className="text-[#4479A1] text-sm" />, color: "#4479A1" },

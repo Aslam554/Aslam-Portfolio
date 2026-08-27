@@ -89,6 +89,36 @@
       "key": "Git/Github",
       "val": "github.webp",
       "category": "tools"
+    },
+    {
+      "id": 19,
+      "key": "FastAPI",
+      "val": "fastapi.png",
+      "category": "webdev"
+    },
+    {
+      "id": 20,
+      "key": "Flask",
+      "val": "flask.png",
+      "category": "webdev"
+    },
+    {
+      "id": 21,
+      "key": "NumPy",
+      "val": "numpy.png",
+      "category": "datascience"
+    },
+    {
+      "id": 22,
+      "key": "Pandas",
+      "val": "pandas.png",
+      "category": "datascience"
+    },
+    {
+      "id": 23,
+      "key": "Matplotlib",
+      "val": "matplotlib.png",
+      "category": "datascience"
     }
   ]
 }
