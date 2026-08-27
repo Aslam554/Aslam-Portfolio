@@ -15,6 +15,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: "Projects", id: "projects" },
     { name: "Activity", id: "github-activity" },
     { name: "Achievements", id: "achievements" },
+    { name: "Articles", id: "articles" },
   ];
 
   useEffect(() => {

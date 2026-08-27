@@ -1,0 +1,56 @@
+{
+  "articles": [
+    {
+      "id": "fullstack-roadmap-2026",
+      "title": "The 2026 Full-Stack Web Architecture Roadmap",
+      "excerpt": "A complete guide on mastering Next.js 15, TypeScript, Node.js, and AI API integrations for production scalable web applications.",
+      "category": "Architecture",
+      "platform": "Medium",
+      "readTime": "6 min read",
+      "baseReads": 1420,
+      "date": "Feb 2026",
+      "banner": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "url": "https://medium.com/@aslambeg84",
+      "tags": ["Next.js", "TypeScript", "System Design"]
+    },
+    {
+      "id": "fastapi-vs-express",
+      "title": "FastAPI vs Express.js: Building High-Performance REST APIs",
+      "excerpt": "Detailed benchmark comparison of asynchronous Python FastAPI vs Node.js Express for scalable microservices.",
+      "category": "Backend",
+      "platform": "X Thread",
+      "readTime": "4 min read",
+      "baseReads": 2180,
+      "date": "Jan 2026",
+      "banner": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+      "url": "https://x.com/aslambeg84",
+      "tags": ["FastAPI", "Node.js", "Python"]
+    },
+    {
+      "id": "postgres-query-optimization",
+      "title": "Optimizing PostgreSQL Queries for High-Traffic Apps",
+      "excerpt": "Proven techniques for database indexing, connection pooling, and query tuning to achieve sub-10ms response times.",
+      "category": "Database",
+      "platform": "Aslam Blog",
+      "readTime": "8 min read",
+      "baseReads": 980,
+      "date": "Dec 2025",
+      "banner": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
+      "url": "https://aslamcodeblog.vercel.app/",
+      "tags": ["PostgreSQL", "Database", "Performance"]
+    },
+    {
+      "id": "edtech-platform-case-study",
+      "title": "Building & Scaling ArabicO EdTech to 100+ Active Students",
+      "excerpt": "Lessons learned building an international EdTech platform from scratch with automated lead flows and Stripe checkout.",
+      "category": "Case Study",
+      "platform": "LinkedIn",
+      "readTime": "5 min read",
+      "baseReads": 3250,
+      "date": "Nov 2025",
+      "banner": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+      "url": "https://www.linkedin.com/in/mirza-aslam-beg-8347661ab/",
+      "tags": ["EdTech", "Stripe", "Startup"]
+    }
+  ]
+}

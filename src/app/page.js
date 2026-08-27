@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import GithubStats from "@/components/GithubStats";
 import Achievement from "@/components/Achievement";
+import Articles from "@/components/Articles";
 import ContactMe from "@/components/ContactMe";
 
 export default function Home() {
@@ -51,6 +52,7 @@ export default function Home() {
         <Projects />
         <GithubStats theme={theme} />
         <Achievement />
+        <Articles />
         <ContactMe />
       </main>
     </div>
