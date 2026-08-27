@@ -56,7 +56,7 @@ export default function ArticlesPage() {
     });
   };
 
-  const categories = ["All", "Medium", "X Threads", "LinkedIn", "Blog"];
+  const categories = ["All", "Medium", "X Threads"];
 
   const filteredArticles = articlesData.articles.filter((art) => {
     const matchesSearch =
@@ -67,9 +67,7 @@ export default function ArticlesPage() {
     const matchesCategory =
       activeCategory === "All" ||
       (activeCategory === "Medium" && art.platform === "Medium") ||
-      (activeCategory === "X Threads" && art.platform === "X Thread") ||
-      (activeCategory === "LinkedIn" && art.platform === "LinkedIn") ||
-      (activeCategory === "Blog" && art.platform === "Aslam Blog");
+      (activeCategory === "X Threads" && art.platform === "X Thread");
 
     return matchesSearch && matchesCategory;
   });
@@ -84,23 +82,11 @@ export default function ArticlesPage() {
           label: "Medium",
           style: "bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 border-zinc-300 dark:border-zinc-700"
         };
-      case "X Thread":
+      default:
         return {
           icon: <FaXTwitter className="text-zinc-900 dark:text-white text-xs" />,
           label: "X Thread",
           style: "bg-zinc-900/10 dark:bg-zinc-100/10 text-zinc-900 dark:text-zinc-100 border-zinc-300 dark:border-zinc-700"
-        };
-      case "LinkedIn":
-        return {
-          icon: <FaLinkedin className="text-[#0A66C2] text-xs" />,
-          label: "LinkedIn",
-          style: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20"
-        };
-      default:
-        return {
-          icon: <FaBookOpen className="text-indigo-500 text-xs" />,
-          label: "Tech Blog",
-          style: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20"
         };
     }
   };

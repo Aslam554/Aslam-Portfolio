@@ -27,30 +27,30 @@
       "tags": ["FastAPI", "Node.js", "Python"]
     },
     {
-      "id": "postgres-query-optimization",
-      "title": "Optimizing PostgreSQL Queries for High-Traffic Apps",
-      "excerpt": "Proven techniques for database indexing, connection pooling, and query tuning to achieve sub-10ms response times.",
-      "category": "Database",
-      "platform": "Aslam Blog",
-      "readTime": "8 min read",
-      "baseReads": 980,
+      "id": "react-performance-guide",
+      "title": "Mastering React 19 State & Concurrent Rendering",
+      "excerpt": "How to optimize component re-renders, leverage Server Actions, and reduce bundle sizes in production apps.",
+      "category": "Frontend",
+      "platform": "Medium",
+      "readTime": "5 min read",
+      "baseReads": 1850,
       "date": "Dec 2025",
-      "banner": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
-      "url": "https://aslamcodeblog.vercel.app/",
-      "tags": ["PostgreSQL", "Database", "Performance"]
+      "banner": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80",
+      "url": "https://medium.com/@aslambeg84",
+      "tags": ["React", "Performance", "Frontend"]
     },
     {
-      "id": "edtech-platform-case-study",
-      "title": "Building & Scaling ArabicO EdTech to 100+ Active Students",
-      "excerpt": "Lessons learned building an international EdTech platform from scratch with automated lead flows and Stripe checkout.",
-      "category": "Case Study",
-      "platform": "LinkedIn",
-      "readTime": "5 min read",
-      "baseReads": 3250,
+      "id": "modern-backend-architecture",
+      "title": "Designing Scalable PostgreSQL & Redis Caching Layers",
+      "excerpt": "A deep dive thread into caching strategies, connection pooling, and sub-10ms query optimization.",
+      "category": "Backend",
+      "platform": "X Thread",
+      "readTime": "3 min read",
+      "baseReads": 3120,
       "date": "Nov 2025",
-      "banner": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-      "url": "https://www.linkedin.com/in/mirza-aslam-beg-8347661ab/",
-      "tags": ["EdTech", "Stripe", "Startup"]
+      "banner": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80",
+      "url": "https://x.com/aslambeg84",
+      "tags": ["PostgreSQL", "Redis", "Backend"]
     }
   ]
 }
