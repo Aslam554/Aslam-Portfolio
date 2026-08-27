@@ -7,7 +7,6 @@ import { SiJavascript, SiTypescript, SiPython, SiReact, SiNextdotjs } from "reac
 
 export default function GithubStats({ theme = "dark" }) {
   const [selectedYear, setSelectedYear] = useState("last");
-  const [selectedDay, setSelectedDay] = useState(null);
   const [stats, setStats] = useState({
     publicRepos: 28,
     followers: 12,
@@ -175,32 +174,14 @@ export default function GithubStats({ theme = "dark" }) {
                 theme={customTheme}
                 renderBlock={(block, activity) =>
                   React.cloneElement(block, {
-                    onClick: () => setSelectedDay(activity),
-                    style: { ...block.props.style, cursor: "pointer" }
+                    children: (
+                      <title>{`${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${activity.date}`}</title>
+                    ),
                   })
                 }
               />
             </div>
           </div>
-
-          {/* Selected Day Info Badge */}
-          {selectedDay ? (
-            <div className="flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono transition-all">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                <span className="font-bold text-zinc-900 dark:text-zinc-100">
-                  {new Date(selectedDay.date).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })}
-                </span>
-              </div>
-              <span className="font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/20 px-2.5 py-1 rounded-lg">
-                {selectedDay.count} {selectedDay.count === 1 ? "contribution" : "contributions"}
-              </span>
-            </div>
-          ) : (
-            <p className="text-[11px] text-zinc-400 dark:text-zinc-500 font-mono text-center pt-1">
-              💡 Click any square on the calendar to view exact contributions for that day
-            </p>
-          )}
         </div>
 
         {/* Bento Row 3: Most Used Stack & Quick Repos */}
